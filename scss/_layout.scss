@@ -1,0 +1,83 @@
+// ----------- Layout --------------
+// Contains reusable elements such as 
+// containers, headers, footers...
+
+.page{
+    width:100vw;
+    background-color: $bg-primary;
+    color:$txt-primary;
+    margin: auto;
+    height: auto;
+}
+
+h1{
+    font-size: 2rem;
+    font-family: $title-font;
+    padding:0;
+    margin: 0.8em;
+}
+
+h2{
+    font-size: 1.5rem;
+    font-family: $title-font;
+    padding:0;
+    margin: 0.5em;
+}
+
+h3{
+    font-size: 1.2rem;
+    font-family: $title-font;
+    padding:0;
+    margin:0.5em;
+}
+
+p{margin: 0.5em;}
+
+a{
+    text-decoration: none;
+    color: $txt-primary;
+}
+
+.banner{
+    background-color: $bg-secondary;
+    height: 15vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    &__link{
+        font-family: $title-font;
+    }
+}
+
+.game{
+    width:85%;
+    padding-bottom:1rem;
+    margin: auto;
+    &__grid{
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        &--4x4{
+            grid-template-columns: 120px 120px 120px 120px;
+            grid-template-rows: 120px 120px 120px 120px;
+        }
+    }
+    &__header{
+        padding: 0.5em;
+        text-align: center;
+    }
+    &__pres{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem;
+    }
+    &__icon{
+        border-radius: 100%;
+        border: 0.2em solid lighten($bg-secondary, 10%);
+    }
+}
+
+
+

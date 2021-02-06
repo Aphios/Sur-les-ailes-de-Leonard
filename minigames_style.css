@@ -1,0 +1,147 @@
+@font-face {
+  font-family: "Gaegu-Bold";
+  src: local("Gaegu Bold"), local("Gaegu-Bold"), url("./fonts/Gaegu-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Gaegu-Regular";
+  src: local("Gaegu Regular"), local("Gaegu-Regular"), url("./fonts/Gaegu-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+html {
+  box-sizing: border-box;
+  font-size: 22px;
+  font-family: "Gaegu-Regular", cursive;
+}
+
+.page {
+  width: 100vw;
+  background-color: #1abba3;
+  color: #ffde02;
+  margin: auto;
+  height: auto;
+}
+
+h1 {
+  font-size: 2rem;
+  font-family: "Gaegu-Bold", cursive;
+  padding: 0;
+  margin: 0.8em;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-family: "Gaegu-Bold", cursive;
+  padding: 0;
+  margin: 0.5em;
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-family: "Gaegu-Bold", cursive;
+  padding: 0;
+  margin: 0.5em;
+}
+
+p {
+  margin: 0.5em;
+}
+
+a {
+  text-decoration: none;
+  color: #ffde02;
+}
+
+.banner {
+  background-color: #1d7669;
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner__link {
+  font-family: "Gaegu-Bold", cursive;
+}
+
+.game {
+  width: 85%;
+  padding-bottom: 1rem;
+  margin: auto;
+}
+.game__grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+.game__grid--4x4 {
+  grid-template-columns: 120px 120px 120px 120px;
+  grid-template-rows: 120px 120px 120px 120px;
+}
+.game__header {
+  padding: 0.5em;
+  text-align: center;
+}
+.game__pres {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+.game__icon {
+  border-radius: 100%;
+  border: 0.2em solid #279f8d;
+}
+
+.card {
+  transition: opacity 300ms cubic-bezier(0.04, 1.01, 0.76, 0.53);
+}
+.card:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
+.timer__progress-bar {
+  height: 12px;
+  width: 300px;
+  border-radius: 4px;
+  background-color: white;
+  border: 2px solid #2e2e2e;
+  margin-left: 10px;
+}
+.timer__progress-bar--fill {
+  background-color: #8a1c1c;
+  height: 12px;
+  width: 300px;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 30s linear;
+}
+
+.btn {
+  font-size: 1.1rem;
+  font-family: "Gaegu-Bold", cursive;
+  background-color: #d84700;
+  color: #97ff02;
+  border-radius: 5px;
+  padding: 0.3em;
+}
+.btn--animated {
+  transition: transform 200ms ease-in-out;
+}
+.btn--animated:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+.btn--restart {
+  width: 75px;
+  margin: auto;
+}
+
+/*# sourceMappingURL=minigames_style.css.map */

@@ -1,0 +1,55 @@
+// --------------- Components -----------------
+// Contains independent components such as cards, 
+// bars, buttons...
+
+.card{
+    transition: opacity 300ms cubic-bezier(.04,1.01,.76,.53);
+    &:hover{
+        opacity: 0.7;
+        cursor: pointer;
+    }
+}
+
+.timer{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    padding-bottom: 20px;  
+    &__progress-bar{
+        height: 12px;
+        width:300px;
+        border-radius:4px;
+        background-color: white;
+        border: 2px solid rgb(46, 46, 46);
+        margin-left:10px;
+        &--fill{
+            background-color:rgb(138, 28, 28);
+            height: 12px;
+            width:300px;
+            transform-origin: left;
+            transform: scaleX(0);
+            transition: transform 30s linear; 
+        }
+    } 
+}
+
+.btn{
+    font-size:1.1rem;
+    font-family:$title-font;
+    background-color: $cta;
+    color: $txt-secondary;
+    border-radius: 5px;
+    padding: 0.3em;
+    &--animated{
+        transition: transform 200ms ease-in-out;
+        &:hover{
+            transform:scale(1.2);
+            cursor: pointer;
+        }
+    }
+    &--restart{
+        width:75px;
+        margin:auto;
+    }
+}
+
