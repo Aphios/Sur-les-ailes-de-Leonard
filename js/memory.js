@@ -7,22 +7,13 @@ var colorPair = [];
 var blackPair = [];
 // Number of pairs found
 var pairs = 0;
-// Colored cards
+// Cards
 var colors = ["red", "red", "blue", "blue", "green", "green", "turquoise", "turquoise", "yellow", "yellow", "pink", "pink", "violet", "violet", "orange", "orange"];
 var colorCards = [];
+var blackCards = document.getElementsByClassName("game__grid-card");
 // Timeout
 var timeOut;
-// DOM Elements
-var startBtn = document.getElementById("start");
-var restartBtn = document.getElementById("restart");
-var progressbar = document.getElementById("progressbar");
-var blackCards = document.getElementsByClassName("game__grid-card");
-var winMsg = document.createElement("div");
-winMsg.style = "position:absolute; z-index:10; top:50vh; left:40vw; font-size:70px; color:red; font-family:'Gaegu-Bold'; background-color: rgba(116, 85, 108, 0.7); padding:10px; border-radius:10px";
-var lostMsg = winMsg.cloneNode(true);
-winMsg.innerText = "Bravo !";
-lostMsg.innerText = "Perdu !";
-var page = document.getElementById("page");
+
 
 // FUNCTIONS
 function shuffleArray(array) {
@@ -131,9 +122,3 @@ for(let i=0; i<colors.length; i++){
 
 // Pressing start button enables the game to start
 startBtn.addEventListener("click", play);
-
-// Pressing restart refreshes the page
-restartBtn.addEventListener("click", function(){
-    window.location.reload();
-});
-

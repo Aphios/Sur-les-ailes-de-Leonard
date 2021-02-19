@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="minigames_style.css">
+    <title>La chambre de Matisse</title>
+</head>
+<body>
+    <div class="page" id="page">
+
+        <header class="banner">
+            <h1><a class="banner__link" href="index.html">Kidz Fastplay</a></h1>
+        </header>
+
+        <div class="game">
+
+            <div class="game__header">
+                <h2>La chambre de Matisse</h2>
+                <p>Aide le peintre Matisse a ranger sa chambre.</p>
+                <p>Clique sur les objets, fais-les glisser et depose-les au bon endroit.</p>
+            </div>
+    
+            <div class="game__dnd">
+                <div class="dnd__zone zone__cruche" id="zone__cruche"></div>
+                <div class="dnd__zone zone__dessin" id="zone__dessin"></div>
+                <div class="dnd__zone zone__statuette" id="zone__statuette"></div>
+                <img class="dnd__elt elt__cruche" id="cruche" draggable="true" src="imgs/cruche.png" alt="élément à glisser/déposer">
+                <img class="dnd__elt elt__statuette" id="statuette" draggable="true" src="imgs/statuette.png" alt="élément à glisser/déposer">
+                <img class="dnd__elt elt__dessin" id="dessin" draggable="true" src="imgs/dessin.png" alt="élément à glisser/déposer">
+            </div>
+    
+            <div class="btn--restart btn--animated btn" id="restart">Rejouer</div>
+            
+        </div>
+
+    </div>
+
+        
+    <script src="js/common.js"></script>
+    <script src="js/matisse.js"></script>
+    
+</body>
+</html>

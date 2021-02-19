@@ -1,0 +1,46 @@
+// --------------- Pages -----------------
+// Contains components specific to a page
+
+/*La chambre de Matisse */
+
+.game{
+    &__dnd{
+        margin: 0.4rem auto;
+        width:894px;
+        height:731px;
+        background: url("imgs/matisse.jpg") no-repeat center;
+        position: relative;
+    }
+}
+
+.dnd{
+    &__elt{
+        position:absolute;
+        z-index:2;
+        &:hover{
+            cursor: pointer;
+        }
+        @each $elt, $map in $drag-elts{
+            &.elt__#{$elt}{
+               left: map-get($map, left);
+               top: map-get($map, top);
+            }
+        }
+    }
+    &__zone{
+        position:absolute;
+        z-index:1;
+        @each $elt, $map in $drag-zones{
+            &.zone__#{$elt}{
+                left: map-get($map, left);
+                top: map-get($map, top);
+                width: map-get($map, width);
+                height: map-get($map, height);
+            }
+        
+        }
+    }
+}
+
+
+
