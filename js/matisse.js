@@ -47,7 +47,7 @@ function dropElt(event){
     // If all three objects have been correctly placed, display win message
     let found = document.getElementsByClassName("dnd__zone").length;
     if(found === 6){
-        page.appendChild(winMsg);
+        document.getElementById("painting").appendChild(winMsg);
     }
 }
 
