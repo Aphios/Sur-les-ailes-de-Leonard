@@ -10,7 +10,7 @@
     <div class="page" id="page">
 
         <header class="banner">
-            <h1><a class="banner__link" href="index.html">Kidz Fastplay</a></h1>
+            <h1><a class="banner__link" href="index.php">Kidz Fastplay</a></h1>
         </header>
 
         <div class="game">
@@ -25,9 +25,9 @@
                 <div class="dnd__zone zone__cruche" id="zone__cruche"></div>
                 <div class="dnd__zone zone__dessin" id="zone__dessin"></div>
                 <div class="dnd__zone zone__statuette" id="zone__statuette"></div>
-                <img class="dnd__elt elt__cruche" id="cruche" draggable="true" src="imgs/cruche.png" alt="élément à glisser/déposer">
-                <img class="dnd__elt elt__statuette" id="statuette" draggable="true" src="imgs/statuette.png" alt="élément à glisser/déposer">
-                <img class="dnd__elt elt__dessin" id="dessin" draggable="true" src="imgs/dessin.png" alt="élément à glisser/déposer">
+                <div class="dnd__elt elt__cruche" id="cruche" draggable="true" ></div>
+                <div class="dnd__elt elt__statuette" id="statuette" draggable="true"></div>
+                <div class="dnd__elt elt__dessin" id="dessin" draggable="true"></div>
             </div>
     
             <div class="btn--restart btn--animated btn" id="restart">Rejouer</div>

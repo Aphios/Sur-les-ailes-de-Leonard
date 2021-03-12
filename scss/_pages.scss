@@ -1,15 +1,25 @@
 // --------------- Pages -----------------
 // Contains components specific to a page
 
-/*La chambre de Matisse */
+/*La chambre de Matisse */  
 
 .game{
     &__dnd{
         margin: 0.4rem auto;
+        position: relative;
         width:894px;
         height:731px;
         background: url("imgs/matisse.jpg") no-repeat center;
-        position: relative;
+        @media (max-width: 1050px){
+            background: url("imgs/matisse_med.jpg") no-repeat center;
+            width: 500px;
+            height: 409px;
+        }
+        @media (max-width: 500px){
+            background: url("imgs/matisse_sm.jpg") no-repeat center;
+            width : 350px;
+            height: 286px;
+        }
     }
 }
 
@@ -20,24 +30,22 @@
         &:hover{
             cursor: pointer;
         }
-        @each $elt, $map in $drag-elts{
-            &.elt__#{$elt}{
-               left: map-get($map, left);
-               top: map-get($map, top);
-            }
+        @include set_drag_elt($drag-elts, $drag-zones);
+        @media (max-width: 1050px){
+          @include set_drag_elt($drag-elts-med, $drag-zones-med);
+        }
+        @media (max-width: 500px){
+            @include set_drag_elt($drag-elts-sm, $drag-zones-sm);
         }
     }
     &__zone{
         position:absolute;
-        z-index:1;
-        @each $elt, $map in $drag-zones{
-            &.zone__#{$elt}{
-                left: map-get($map, left);
-                top: map-get($map, top);
-                width: map-get($map, width);
-                height: map-get($map, height);
-            }
-        
+        @include set_drag_zone($drag-zones);
+        @media (max-width: 1050px){
+            @include set_drag_zone($drag-zones-med);
+        }
+        @media (max-width: 500px){
+            @include set_drag_zone($drag-zones-sm);
         }
     }
 }

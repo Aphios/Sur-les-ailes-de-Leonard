@@ -2,12 +2,17 @@
 // Contains reusable elements such as 
 // containers, headers, footers...
 
+body{
+    margin: 0;
+}
+
 .page{
-    width:100vw;
-    background-color: $bg-primary;
-    color:$txt-primary;
+    width:100%;
+    color:$neutral-light;
     margin: auto;
     height: auto;
+    background:$bg-primary;
+    background: radial-gradient(circle, rgba(59,118,196,1) 0%, rgba(105,141,190,1) 100%);
 }
 
 h1{
@@ -15,6 +20,7 @@ h1{
     font-family: $title-font;
     padding:0;
     margin: 0.5em;
+    color: $neutral-light;
 }
 
 h2{
@@ -22,6 +28,7 @@ h2{
     font-family: $title-font;
     padding:0;
     margin: 0.3em;
+    color: $neutral-light;
 }
 
 h3{
@@ -31,21 +38,40 @@ h3{
     margin:0.2em;
 }
 
-p{margin: 0.1em;}
+p{margin: 0.2em 0.6em 0.2em 0.6em;}
 
 a{
     text-decoration: none;
-    color: $txt-primary;
+    color: $neutral-light;
 }
 
 .banner{
-    background-color: $bg-secondary;
-    height: 15vh;
+    background-color: $neutral-light;
+    height: 15%;
     display:flex;
     justify-content: center;
     align-items: center;
     &__link{
         font-family: $title-font;
+        color: $neutral-dark;
+    }
+}
+
+.footer{
+    &__bot{
+        display:flex;
+        justify-content: space-evenly;
+        align-items: flex-end;
+        background-color: $neutral-light;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        @media (max-width: 400px){
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    &__link{
+        color: $neutral-dark;
     }
 }
 
@@ -56,19 +82,41 @@ a{
     margin-left: auto;
     margin-right:auto;
     padding-bottom:0.5rem;
+    @media(max-width: 500px){
+        width: 100%;
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+    }
+    &__link{
+        color: $col-primary;
+    }
     &__grid{
         display: grid;
         justify-content: center;
         align-content: center;
         margin-top: 0.4rem;
         margin-bottom: 0.4rem;
-        &--4x4{
+        &--memory{
+            position: relative;
             grid-template-columns: 120px 120px 120px 120px;
             grid-template-rows: 120px 120px 120px 120px;
+            @media (max-width:600px){
+                grid-template-columns: 120px 120px;
+                grid-template-rows: 120px 120px 120px 120px 120px 120px 120px 120px;
+            }
+        
         }
-        &--3x2{
-            grid-template-columns: 300px 300px 300px;
-            grid-template-rows: 250px 250px;
+        &--index{
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            @media (max-width:1000px){
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+            }
+            @media (max-width: 750px){
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+            }
         }
     }
     &__header{
@@ -83,7 +131,7 @@ a{
     }
     &__icon{
         border-radius: 100%;
-        border: 0.2em solid lighten($bg-secondary, 10%);
+        border: 0.2em solid lighten($bg-primary, 8%);
         transition:transform 300ms ease-in;
         &:hover{
             transform:scale(1.1);

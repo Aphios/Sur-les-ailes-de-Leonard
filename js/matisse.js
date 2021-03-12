@@ -35,8 +35,7 @@ function dropElt(event){
     if(zoneId === eltId){
         for(let obj of dragData){
             if(obj === eltId){
-                elt.className = "dnd__zone zone__" + eltId;
-                elt.style.zIndex = "2";
+                elt.className = "dnd__elt elt__" + eltId + " elt__found";
                 break;
             }
         }
@@ -45,8 +44,8 @@ function dropElt(event){
         zone.removeEventListener("dragover", allowDrop);
     }
     // If all three objects have been correctly placed, display win message
-    let found = document.getElementsByClassName("dnd__zone").length;
-    if(found === 6){
+    let found = document.getElementsByClassName("elt__found").length;
+    if(found === 3){
         document.getElementById("painting").appendChild(winMsg);
     }
 }

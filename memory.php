@@ -10,17 +10,17 @@
     <div class="page" id="page">
 
         <header class="banner">
-            <h1><a class="banner__link" href="index.html">Kidz Fastplay</a></h1>
+            <h1><a class="banner__link" href="index.php">Kidz Fastplay</a></h1>
         </header>
 
-        <div class="game" id="memory">
+        <div class="game">
 
             <div class="game__header">
                 <h2>Jeu du Memory</h2>
                 <p>Clique sur les images pour retrouver les paires dans le temps imparti !</p>
             </div>
     
-            <div class="game__grid game__grid--4x4">
+            <div class="game__grid game__grid--memory"  id="memory">
                 <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="1">
                 <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="2">
                 <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="3">

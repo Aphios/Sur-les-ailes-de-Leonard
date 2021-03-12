@@ -1,3 +1,8 @@
+/*$bg-primary: #4e8098;
+$col-primary: #ffeb0f;
+$col-secondary: #0DAB76;
+$neutral-light: #f7f0f5;
+$neutral-dark: #544343;*/
 @font-face {
   font-family: "Gaegu-Bold";
   src: local("Gaegu Bold"), local("Gaegu-Bold"), url("./fonts/Gaegu-Bold.ttf") format("truetype");
@@ -10,16 +15,21 @@
 }
 html {
   box-sizing: border-box;
-  font-size: 22px;
+  font-size: 18px;
   font-family: "Gaegu-Regular", cursive;
 }
 
+body {
+  margin: 0;
+}
+
 .page {
-  width: 100vw;
-  background-color: #1abba3;
-  color: #ffde02;
+  width: 100%;
+  color: #f4ede2;
   margin: auto;
   height: auto;
+  background: #3b76c4;
+  background: radial-gradient(circle, #3b76c4 0%, #698dbe 100%);
 }
 
 h1 {
@@ -27,6 +37,7 @@ h1 {
   font-family: "Gaegu-Bold", cursive;
   padding: 0;
   margin: 0.5em;
+  color: #f4ede2;
 }
 
 h2 {
@@ -34,6 +45,7 @@ h2 {
   font-family: "Gaegu-Bold", cursive;
   padding: 0;
   margin: 0.3em;
+  color: #f4ede2;
 }
 
 h3 {
@@ -44,23 +56,42 @@ h3 {
 }
 
 p {
-  margin: 0.1em;
+  margin: 0.2em 0.6em 0.2em 0.6em;
 }
 
 a {
   text-decoration: none;
-  color: #ffde02;
+  color: #f4ede2;
 }
 
 .banner {
-  background-color: #1d7669;
-  height: 15vh;
+  background-color: #f4ede2;
+  height: 15%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .banner__link {
   font-family: "Gaegu-Bold", cursive;
+  color: #383a3d;
+}
+
+.footer__bot {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  background-color: #f4ede2;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+@media (max-width: 400px) {
+  .footer__bot {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.footer__link {
+  color: #383a3d;
 }
 
 .game {
@@ -71,6 +102,16 @@ a {
   margin-right: auto;
   padding-bottom: 0.5rem;
 }
+@media (max-width: 500px) {
+  .game {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+  }
+}
+.game__link {
+  color: #ffeb0f;
+}
 .game__grid {
   display: grid;
   justify-content: center;
@@ -78,13 +119,32 @@ a {
   margin-top: 0.4rem;
   margin-bottom: 0.4rem;
 }
-.game__grid--4x4 {
+.game__grid--memory {
+  position: relative;
   grid-template-columns: 120px 120px 120px 120px;
   grid-template-rows: 120px 120px 120px 120px;
 }
-.game__grid--3x2 {
-  grid-template-columns: 300px 300px 300px;
-  grid-template-rows: 250px 250px;
+@media (max-width: 600px) {
+  .game__grid--memory {
+    grid-template-columns: 120px 120px;
+    grid-template-rows: 120px 120px 120px 120px 120px 120px 120px 120px;
+  }
+}
+.game__grid--index {
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+@media (max-width: 1000px) {
+  .game__grid--index {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 750px) {
+  .game__grid--index {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
 }
 .game__header {
   text-align: center;
@@ -98,7 +158,7 @@ a {
 }
 .game__icon {
   border-radius: 100%;
-  border: 0.2em solid #279f8d;
+  border: 0.2em solid #5a8ccd;
   transition: transform 300ms ease-in;
 }
 .game__icon:hover {
@@ -120,30 +180,48 @@ a {
   padding-top: 0.2rem;
   padding-bottom: 0.5rem;
 }
+@media (max-width: 600px) {
+  .timer {
+    flex-direction: column;
+  }
+}
 .timer__progress-bar {
   height: 12px;
   width: 300px;
   border-radius: 4px;
   background-color: white;
-  border: 2px solid #2e2e2e;
+  border: 2px solid #383a3d;
   margin-left: 10px;
+  margin-top: 5px;
+}
+@media (max-width: 400px) {
+  .timer__progress-bar {
+    width: 260px;
+    margin-left: 5px;
+  }
 }
 .timer__progress-bar--fill {
-  background-color: #8a1c1c;
+  background-color: #ac004a;
   height: 12px;
   width: 300px;
   transform-origin: left;
   transform: scaleX(0);
   transition: transform 30s linear;
 }
+@media (max-width: 400px) {
+  .timer__progress-bar--fill {
+    width: 260px;
+  }
+}
 
 .btn {
   font-size: 1.1rem;
   font-family: "Gaegu-Bold", cursive;
-  background-color: #d84700;
-  color: #97ff02;
+  background-color: #ffeb0f;
+  color: #383a3d;
   border-radius: 5px;
   padding: 0.3em;
+  text-align: center;
 }
 .btn--animated {
   transition: transform 200ms ease-in-out;
@@ -157,13 +235,49 @@ a {
   margin: auto;
 }
 
+.popup-msg {
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /*top:40%; 
+  left:40%; */
+  font-size: 3rem;
+  color: #ffeb0f;
+  font-family: "Gaegu-Bold";
+  background-color: rgba(59, 118, 196, 0.85);
+  padding: 0.5em;
+  border-radius: 0.5em;
+  text-align: center;
+}
+@media (max-width: 1050px) {
+  .popup-msg {
+    font-size: 2rem;
+  }
+}
+
 /*La chambre de Matisse */
 .game__dnd {
   margin: 0.4rem auto;
+  position: relative;
   width: 894px;
   height: 731px;
   background: url("imgs/matisse.jpg") no-repeat center;
-  position: relative;
+}
+@media (max-width: 1050px) {
+  .game__dnd {
+    background: url("imgs/matisse_med.jpg") no-repeat center;
+    width: 500px;
+    height: 409px;
+  }
+}
+@media (max-width: 500px) {
+  .game__dnd {
+    background: url("imgs/matisse_sm.jpg") no-repeat center;
+    width: 350px;
+    height: 286px;
+  }
 }
 
 .dnd__elt {
@@ -176,18 +290,126 @@ a {
 .dnd__elt.elt__cruche {
   left: 160px;
   top: 562px;
+  width: 46px;
+  height: 50px;
+  background-image: url("imgs/cruche.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.dnd__elt.elt__cruche.elt__found {
+  left: 456px;
+  top: 395px;
 }
 .dnd__elt.elt__dessin {
   left: 418px;
   top: 591px;
+  width: 68px;
+  height: 89px;
+  background-image: url("imgs/dessin.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.dnd__elt.elt__dessin.elt__found {
+  left: 175px;
+  top: 162px;
 }
 .dnd__elt.elt__statuette {
   left: 520px;
   top: 538px;
+  width: 89px;
+  height: 146px;
+  background-image: url("imgs/statuette.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.dnd__elt.elt__statuette.elt__found {
+  left: 54px;
+  top: 159px;
+}
+@media (max-width: 1050px) {
+  .dnd__elt.elt__cruche {
+    left: 100px;
+    top: 315px;
+    width: 26px;
+    height: 28px;
+    background-image: url("imgs/cruche_med.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .dnd__elt.elt__cruche.elt__found {
+    left: 254px;
+    top: 228px;
+  }
+  .dnd__elt.elt__dessin {
+    left: 235px;
+    top: 330px;
+    width: 38px;
+    height: 50px;
+    background-image: url("imgs/dessin_med.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .dnd__elt.elt__dessin.elt__found {
+    left: 102px;
+    top: 94px;
+  }
+  .dnd__elt.elt__statuette {
+    left: 300px;
+    top: 300px;
+    width: 50px;
+    height: 82px;
+    background-image: url("imgs/statuette_med.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .dnd__elt.elt__statuette.elt__found {
+    left: 28px;
+    top: 89px;
+  }
+}
+@media (max-width: 500px) {
+  .dnd__elt.elt__cruche {
+    left: 70px;
+    top: 225px;
+    width: 18px;
+    height: 20px;
+    background-image: url("imgs/cruche_sm.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .dnd__elt.elt__cruche.elt__found {
+    left: 179px;
+    top: 158px;
+  }
+  .dnd__elt.elt__dessin {
+    left: 165px;
+    top: 220px;
+    width: 27px;
+    height: 35px;
+    background-image: url("imgs/dessin_sm.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .dnd__elt.elt__dessin.elt__found {
+    left: 72px;
+    top: 63px;
+  }
+  .dnd__elt.elt__statuette {
+    left: 205px;
+    top: 210px;
+    width: 35px;
+    height: 57px;
+    background-image: url("imgs/statuette_sm.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .dnd__elt.elt__statuette.elt__found {
+    left: 19px;
+    top: 61px;
+  }
 }
 .dnd__zone {
   position: absolute;
-  z-index: 1;
 }
 .dnd__zone.zone__statuette {
   left: 54px;
@@ -196,16 +418,56 @@ a {
   height: 137px;
 }
 .dnd__zone.zone__dessin {
-  left: 171px;
-  top: 152px;
+  left: 175px;
+  top: 162px;
   width: 75px;
   height: 105px;
 }
 .dnd__zone.zone__cruche {
   left: 456px;
-  top: 391px;
+  top: 395px;
   width: 51px;
   height: 61px;
+}
+@media (max-width: 1050px) {
+  .dnd__zone.zone__cruche {
+    left: 254px;
+    top: 228px;
+    width: 23px;
+    height: 25px;
+  }
+  .dnd__zone.zone__dessin {
+    left: 102px;
+    top: 94px;
+    width: 39px;
+    height: 48px;
+  }
+  .dnd__zone.zone__statuette {
+    left: 28px;
+    top: 89px;
+    width: 46px;
+    height: 79px;
+  }
+}
+@media (max-width: 500px) {
+  .dnd__zone.zone__cruche {
+    left: 179px;
+    top: 158px;
+    width: 15px;
+    height: 28px;
+  }
+  .dnd__zone.zone__dessin {
+    left: 72px;
+    top: 63px;
+    width: 25px;
+    height: 36px;
+  }
+  .dnd__zone.zone__statuette {
+    left: 19px;
+    top: 61px;
+    width: 30px;
+    height: 55px;
+  }
 }
 
 /*# sourceMappingURL=minigames_style.css.map */
