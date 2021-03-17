@@ -4,19 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="minigames_style.css">
-    <title>La chambre de Matisse</title>
+    <title>L'atelier de Matisse</title>
 </head>
 <body>
     <div class="page" id="page">
 
         <header class="banner">
-            <h1><a class="banner__link" href="index.php">Kidz Fastplay</a></h1>
+            <h1><a class="banner__link" href="index.php">Sur les ailes de Léonard</a></h1>
+            <div class="banner__menu">
+              <p><a class="menu__link" href="info.php">Informations et mentions légales</a></p>
+              <p><a class= "menu__link" href="contact.php">Contact</a></p>
+            </div>
         </header>
 
         <div class="game">
 
             <div class="game__header">
-                <h2>La chambre de Matisse</h2>
+                <h2>L'atelier de Matisse</h2>
                 <p>Aide le peintre Matisse a ranger sa chambre.</p>
                 <p>Clique sur les objets, fais-les glisser et depose-les au bon endroit.</p>
             </div>
@@ -30,7 +34,7 @@
                 <div class="dnd__elt elt__dessin" id="dessin" draggable="true"></div>
             </div>
     
-            <div class="btn--restart btn--animated btn" id="restart">Rejouer</div>
+            <div class="btn__restart--center btn--animated btn" id="restart">Rejouer</div>
             
         </div>
 

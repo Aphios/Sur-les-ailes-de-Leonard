@@ -8,15 +8,16 @@ body{
 
 .page{
     width:100%;
+    min-height: 700px;
     color:$neutral-light;
-    margin: auto;
+    margin: 0 auto;
     height: auto;
     background:$bg-primary;
     background: radial-gradient(circle, rgba(59,118,196,1) 0%, rgba(105,141,190,1) 100%);
 }
 
 h1{
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-family: $title-font;
     padding:0;
     margin: 0.5em;
@@ -24,7 +25,7 @@ h1{
 }
 
 h2{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-family: $title-font;
     padding:0;
     margin: 0.3em;
@@ -47,36 +48,34 @@ a{
 
 .banner{
     background-color: $neutral-light;
-    height: 15%;
+    //height: 15%;
     display:flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    @media (max-width: 650px){
+        flex-direction: column;
+        align-items: center;
+    }
     &__link{
         font-family: $title-font;
         color: $neutral-dark;
-    }
-}
-
-.footer{
-    &__bot{
-        display:flex;
-        justify-content: space-evenly;
-        align-items: flex-end;
-        background-color: $neutral-light;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        @media (max-width: 400px){
+    } 
+    >.banner__menu{
+        display: flex;
+        align-items: center;
+        @media (max-width: 650px){
             flex-direction: column;
             align-items: center;
         }
-    }
-    &__link{
-        color: $neutral-dark;
+        .menu__link{
+            color: $neutral-dark;
+        }
     }
 }
 
+
 .game{
-    width:85%;
+    width:75%;
     margin-bottom:1rem;
     margin-top:1rem;
     margin-left: auto;
@@ -121,6 +120,8 @@ a{
     }
     &__header{
         text-align: center;
+        width: 70%;
+        margin: auto;
     }
     &__pres{
         display:flex;
@@ -137,6 +138,26 @@ a{
             transform:scale(1.1);
         }
     }
+    &--wide{
+        margin: 0;
+        color: $neutral-dark;
+        width:100%;
+        @include img_bg(100%, 100%, "imgs/magnolia.jpg");
+
+    
+    }
+}
+
+.form__center{
+    width: 60%;
+    margin: auto;
+    @media(max-width: 750px){
+        width: 80%;
+    }
+    @media(max-width: 400px){
+        width: 100%;
+    }
+
 }
 
 

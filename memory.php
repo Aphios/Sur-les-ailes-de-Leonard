@@ -10,7 +10,11 @@
     <div class="page" id="page">
 
         <header class="banner">
-            <h1><a class="banner__link" href="index.php">Kidz Fastplay</a></h1>
+            <h1><a class="banner__link" href="index.php">Sur les ailes de Léonard</a></h1>
+            <div class="banner__menu">
+              <p><a class="menu__link" href="info.php">Informations et mentions légales</a></p>
+              <p><a class= "menu__link" href="contact.php">Contact</a></p>
+            </div>
         </header>
 
         <div class="game">
@@ -46,15 +50,15 @@
                 </div>
             </div>
     
-            <div class="btn--restart btn--animated btn" id="restart">Rejouer</div>
+            <div class="btn__restart--center btn--animated btn" id="restart">Rejouer</div>
             
         </div>
 
     </div>
 
-        
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js"></script>
     <script src="js/common.js"></script>
     <script src="js/memory.js"></script>
-    
+
 </body>
 </html>

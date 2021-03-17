@@ -7,18 +7,12 @@
     &__dnd{
         margin: 0.4rem auto;
         position: relative;
-        width:894px;
-        height:731px;
-        background: url("imgs/matisse.jpg") no-repeat center;
+        @include img_bg(894px, 731px, "imgs/matisse.jpg");
         @media (max-width: 1050px){
-            background: url("imgs/matisse_med.jpg") no-repeat center;
-            width: 500px;
-            height: 409px;
+            @include img_bg(500px, 409px, "imgs/matisse_med.jpg");
         }
         @media (max-width: 500px){
-            background: url("imgs/matisse_sm.jpg") no-repeat center;
-            width : 350px;
-            height: 286px;
+            @include img_bg(350px, 286px, "imgs/matisse_sm.jpg");
         }
     }
 }

@@ -1,8 +1,9 @@
+<!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Minigames</title>
+    <title>Sur les ailes de Léonard</title>
     <link rel="stylesheet" href="minigames_style.css">
     </head>
 
@@ -10,15 +11,19 @@
       <div class="page" id="page">
 
         <header class="banner">
-            <h1><a class="banner__link" href="index.php">Kidz Fastplay</a></h1>
+            <h1><a class="banner__link" href="index.php">Sur les ailes de Léonard</a></h1>
+            <div class="banner__menu">
+              <p><a class="menu__link" href="info.php">Informations et mentions légales</a></p>
+              <p><a class= "menu__link" href="contact.php">Contact</a></p>
+            </div>
         </header>
 
         <div class="game">
 
           <div class="game__header">
-            <h2>Bienvenue sur Kidz Fastplay !</h2>
-            <p>Prêt à partir à la découverte d'oeuvres d'art tout en t'amusant ?</p>
-            <p>Clique sur un dex jeux proposés...</p>
+            <h2>Bienvenue !</h2>
+            <p>Pars à la découverte de fabuleuses d'oeuvres d'art et découvre le plaisir des mots en voyageant sur les ailes de Léonard, le papillon aventurier !</p>
+            <p>Choisis un jeu à effectuer avec lui.</p>
           </div>
 
           <div class="game__grid game__grid--index">
@@ -66,11 +71,6 @@
             </div>
           </div>
         </div>
-
-        <footer class="footer__bot">
-            <p><a class="footer__link" href="info.php">Informations et mentions légales</a></p>
-            <p><a class= "footer__link" href="contact.php">Contact</a></p>
-        </footer>
     </div>
     </body>
 

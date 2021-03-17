@@ -18,6 +18,16 @@ html {
   font-size: 18px;
   font-family: "Gaegu-Regular", cursive;
 }
+@media (max-width: 750px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media (max-width: 400px) {
+  html {
+    font-size: 14px;
+  }
+}
 
 body {
   margin: 0;
@@ -25,15 +35,16 @@ body {
 
 .page {
   width: 100%;
+  min-height: 700px;
   color: #f4ede2;
-  margin: auto;
+  margin: 0 auto;
   height: auto;
   background: #3b76c4;
   background: radial-gradient(circle, #3b76c4 0%, #698dbe 100%);
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-family: "Gaegu-Bold", cursive;
   padding: 0;
   margin: 0.5em;
@@ -41,7 +52,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-family: "Gaegu-Bold", cursive;
   padding: 0;
   margin: 0.3em;
@@ -66,36 +77,36 @@ a {
 
 .banner {
   background-color: #f4ede2;
-  height: 15%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+}
+@media (max-width: 650px) {
+  .banner {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .banner__link {
   font-family: "Gaegu-Bold", cursive;
   color: #383a3d;
 }
-
-.footer__bot {
+.banner > .banner__menu {
   display: flex;
-  justify-content: space-evenly;
-  align-items: flex-end;
-  background-color: #f4ede2;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  align-items: center;
 }
-@media (max-width: 400px) {
-  .footer__bot {
+@media (max-width: 650px) {
+  .banner > .banner__menu {
     flex-direction: column;
     align-items: center;
   }
 }
-.footer__link {
+.banner > .banner__menu .menu__link {
   color: #383a3d;
 }
 
 .game {
-  width: 85%;
+  width: 75%;
   margin-bottom: 1rem;
   margin-top: 1rem;
   margin-left: auto;
@@ -148,6 +159,8 @@ a {
 }
 .game__header {
   text-align: center;
+  width: 70%;
+  margin: auto;
 }
 .game__pres {
   display: flex;
@@ -163,6 +176,29 @@ a {
 }
 .game__icon:hover {
   transform: scale(1.1);
+}
+.game--wide {
+  margin: 0;
+  color: #383a3d;
+  width: 100%;
+  width: 100%;
+  height: 100%;
+  background: url("imgs/magnolia.jpg") no-repeat center;
+}
+
+.form__center {
+  width: 60%;
+  margin: auto;
+}
+@media (max-width: 750px) {
+  .form__center {
+    width: 80%;
+  }
+}
+@media (max-width: 400px) {
+  .form__center {
+    width: 100%;
+  }
 }
 
 .card {
@@ -230,9 +266,17 @@ a {
   transform: scale(1.2);
   cursor: pointer;
 }
-.btn--restart {
+.btn__restart--center {
   width: 75px;
   margin: auto;
+}
+.btn__submit {
+  width: 85px;
+  margin: 10px;
+}
+.btn__submit--center {
+  display: block;
+  margin: 5px auto;
 }
 
 .popup-msg {
@@ -267,16 +311,16 @@ a {
 }
 @media (max-width: 1050px) {
   .game__dnd {
-    background: url("imgs/matisse_med.jpg") no-repeat center;
     width: 500px;
     height: 409px;
+    background: url("imgs/matisse_med.jpg") no-repeat center;
   }
 }
 @media (max-width: 500px) {
   .game__dnd {
-    background: url("imgs/matisse_sm.jpg") no-repeat center;
     width: 350px;
     height: 286px;
+    background: url("imgs/matisse_sm.jpg") no-repeat center;
   }
 }
 

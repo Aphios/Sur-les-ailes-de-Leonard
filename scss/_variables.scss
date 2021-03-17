@@ -83,3 +83,9 @@ $drag-zones-sm: (cruche:(left: 179px, top: 158px, width: 15px, height: 28px), de
     transform: translate(-50%, -50%);
 }
 
+@mixin img_bg($w, $h, $img){
+    width:$w;
+    height:$h;
+    background: url($img) no-repeat center;
+}
+

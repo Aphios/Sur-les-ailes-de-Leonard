@@ -60,10 +60,19 @@
             cursor: pointer;
         }
     }
-    &--restart{
-        width:75px;
-        margin:auto;
-
+    &__restart{
+        &--center{
+            width:75px;
+            margin:auto;
+        }
+    }
+    &__submit{
+        width: 85px;
+        margin: 10px;
+        &--center{
+            display:block;
+            margin: 5px auto;
+        }
     }
 }
 
