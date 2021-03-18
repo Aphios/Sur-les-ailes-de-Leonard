@@ -87,9 +87,11 @@ function play(){
 // Ends the game
 function endgame(win){
     if(win){
-        memory.appendChild(winMsg);    
+        memory.appendChild(winMsg);
+        sendPoints("http://localhost/Projets_sass/sur-les-ailes-de-leonard/ajax_pts.php", 400, true);    
     }else{
         memory.appendChild(lostMsg);
+        sendPoints("http://localhost/Projets_sass/sur-les-ailes-de-leonard/ajax_pts.php", 200, false);
         // Disable flipping cards
         for(let card of hiddenCards){
             card.removeEventListener("click", flipCard);

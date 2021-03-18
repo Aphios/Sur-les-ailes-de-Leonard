@@ -66,6 +66,12 @@ class DBManager{
         return $getAll->fetchAll();
     }
 
+    public function getAllStrophesButOne(int $id){
+        $getAll = $this->_db->prepare('SELECT * FROM poesie WHERE Id != ?');
+        $getAll->execute(array($id));
+        return $getAll->fetchAll();
+    }
+
     // Returns int total number of strophes in database
     public function totalStrophes(){
         $nb = $this->_db->prepare('SELECT COUNT(*) FROM poesie');

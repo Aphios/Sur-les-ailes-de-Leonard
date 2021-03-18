@@ -88,3 +88,19 @@ function cropImg(img, maxWidth, maxHeight){
     img.height = outputHeight;
     img.src = canvas.toDataURL();
 }
+
+/* Sends points information to PHP server
+** url : destination
+** pts : the amount of points
+** add : true if we need to add points, false otherwise
+*/
+function sendPoints(url, pts, add){
+    let request = new XMLHttpRequest();
+    request.open("POST", url);
+    request.setRequestHeader("X-Requested-With", "xmlhttprequest");
+    request.addEventListener("load", function () {
+        console.log(request.responseText);
+    });
+    request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    request.send("points="+pts+"&addition="+add);
+}

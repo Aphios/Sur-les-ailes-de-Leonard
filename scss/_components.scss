@@ -78,9 +78,7 @@
 
 .popup-msg{
     @include center_above;
-    /*top:40%; 
-    left:40%; */
-    font-size:3rem; 
+    font-size:2rem; 
     color: $col-primary; 
     font-family:'Gaegu-Bold'; 
     background-color: rgba(59, 118, 196, 0.85); 
@@ -88,7 +86,7 @@
     border-radius:0.5em;
     text-align: center;
     @media(max-width: 1050px){
-        font-size: 2rem;
+        font-size: 1.2rem;
     }
 }
 

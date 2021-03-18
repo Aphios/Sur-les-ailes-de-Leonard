@@ -47,6 +47,7 @@ function dropElt(event){
     let found = document.getElementsByClassName("elt__found").length;
     if(found === 3){
         document.getElementById("painting").appendChild(winMsg);
+        sendPoints("http://localhost/Projets_sass/sur-les-ailes-de-leonard/ajax_pts.php", 200, true);
     }
 }
 

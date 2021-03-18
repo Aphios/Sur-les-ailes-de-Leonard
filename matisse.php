@@ -1,3 +1,10 @@
+<?php
+  session_start();
+  if(!isset($_SESSION["points"])){
+    $_SESSION["points"] = 0;
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -18,6 +25,8 @@
         </header>
 
         <div class="game">
+
+            <div class="game__points"><?=$_SESSION["points"]?> points</div>
 
             <div class="game__header">
                 <h2>L'atelier de Matisse</h2>

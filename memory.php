@@ -1,3 +1,10 @@
+<?php
+  session_start();
+  if(!isset($_SESSION["points"])){
+    $_SESSION["points"] = 0;
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -19,6 +26,7 @@
 
         <div class="game">
 
+            <div class="game__points"><?=$_SESSION["points"]?> points</div>
             <div class="game__header">
                 <h2>Jeu du Memory</h2>
                 <p>Clique sur les images pour retrouver les paires dans le temps imparti !</p>

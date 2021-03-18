@@ -1,6 +1,10 @@
 <?php
 	require_once 'utils.php';
 	require_once 'DBManager.php';
+  session_start();
+  if(!isset($_SESSION["points"])){
+    $_SESSION["points"] = 0;
+  }
 ?>
 
 <html lang="fr">
@@ -24,9 +28,11 @@
 
         <div class="game">
 
+          <div class="game__points"><?=$_SESSION["points"]?> points</div>
+
           <div class="game__header">
             <h2>Poesy</h2>
-            <p>Invente un vers de poésie et tu dévcouvriras ensuite une poésie aléatoire composée rien que pour toi !</p>
+            <p>Invente un vers de poésie et tu découvriras ensuite un curieux poème, composé rien que pour toi !</p>
           </div>
 
           <form action="poesy.php" class="form__center" method="post">
@@ -39,16 +45,26 @@
             if(exists($_POST["strophe"])){
               $strophe = getDataStr($_POST['strophe'], 200);
               if($strophe){
+                // Credit points
+                $_SESSION["points"] += 200;
+                // Add to database
                 $db = new DBManager();
                 $db->addStrophe($strophe);
+                // Compose poem
                 $stropheId = $db->getDB()->lastInsertId();
                 $stropheJoueur = $db->getStrophe($stropheId);
-                $allStrophes = $db->getAllStrophes();
-                shuffle($allStrophes);
-                $randomStrophes = array_slice($allStrophes, 0, 9);
-                $randomStrophes = array_merge($randomStrophes, $stropheJoueur);
+                $allStrophes = $db->getAllStrophesButOne($stropheId);
+                $randomStrophes = [];
+                foreach($allStrophes as $s){
+                  array_push($randomStrophes, $s["Strophe"]);
+                }
+                shuffle($randomStrophes);
+                $randomStrophes = array_slice($randomStrophes, 0, 9);
+                array_push($randomStrophes, $stropheJoueur["Strophe"]);
+                echo "<p>Merci de ta contribution ! Et voici ton poème :</p><p>&nbsp;</p>";
                 foreach($randomStrophes as $s){
-                  echo "<p>".htmlspecialchars($s["Strophe"])."</p>";
+                  // Decode any html entity from the database before echoing it safely
+                  echo "<p>".htmlspecialchars(html_entity_decode($s, ENT_QUOTES))."</p>";
                 }
               }else{
                 echo "<p>Oups ! L'envoi de ton vers n'a pas fonctionné ! Essaie à nouveau.</p>";
