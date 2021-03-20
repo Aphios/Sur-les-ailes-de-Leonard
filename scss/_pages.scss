@@ -8,11 +8,20 @@
         margin: 0.4rem auto;
         position: relative;
         @include img_bg(894px, 731px, "imgs/matisse.jpg");
-        @media (max-width: 1050px){
+        @media (max-width: 1100px){
             @include img_bg(500px, 409px, "imgs/matisse_med.jpg");
         }
-        @media (max-width: 500px){
+        @media (max-width: 650px){
             @include img_bg(350px, 286px, "imgs/matisse_sm.jpg");
+        }
+    }
+    &__zone--matisse{
+        width:910px;
+        @media (max-width: 1100px){
+            width: 515px;
+        }
+        @media (max-width: 650px){
+            width: 360px;
         }
     }
 }
@@ -25,10 +34,10 @@
             cursor: pointer;
         }
         @include set_drag_elt($drag-elts, $drag-zones);
-        @media (max-width: 1050px){
+        @media (max-width: 1100px){
           @include set_drag_elt($drag-elts-med, $drag-zones-med);
         }
-        @media (max-width: 500px){
+        @media (max-width: 650px){
             @include set_drag_elt($drag-elts-sm, $drag-zones-sm);
         }
     }
@@ -38,7 +47,7 @@
         @media (max-width: 1050px){
             @include set_drag_zone($drag-zones-med);
         }
-        @media (max-width: 500px){
+        @media (max-width: 650px){
             @include set_drag_zone($drag-zones-sm);
         }
     }

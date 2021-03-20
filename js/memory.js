@@ -102,38 +102,6 @@ function endgame(win){
     progressbar.style.display = "none";
 }
 
-// Fetches images data from an API and returns a Promise
-function fetchDataImgs(url){
-    return new Promise(function (resolve, reject) {
-        var xhr = new XMLHttpRequest();       
-        xhr.addEventListener("load", function(){
-            resolve(JSON.parse(this.responseText).artObjects);
-        });      
-        xhr.addEventListener("error", function () {
-            reject("Impossible de récupérer les données de l'API");
-        });       
-        xhr.open('GET', url);
-        xhr.send();
-    });
-}
-
-// Returns a Promise of the loaded img with some API Data
-function loadImg(artData){
-    return new Promise(function(resolve, reject){
-        let img = new Image();
-        img.crossOrigin = "anonymous";
-        img.width = artData.webImage.width;
-        img.height = artData.webImage.height;
-        img.alt = "illustration Mémory : " + artData.title;
-        img.addEventListener('load', function () {
-            resolve(img);
-        });
-        img.addEventListener("error", function(){
-            reject("Impossible de charger l'image");
-        });
-        img.src = artData.webImage.url;
-    })
-}
 
 // MAIN
 
@@ -147,7 +115,7 @@ fetchDataImgs(url)
 .then(function(artData){
     let promises = [];
     for(let art of artData){
-        promises.push(loadImg(art));
+        promises.push(loadImg(art, "illustration Mémory : "));
     }
     return Promise.all(promises);
 }).then(function(imgs){
@@ -157,7 +125,6 @@ fetchDataImgs(url)
         img.dataset.code = codes[codeIndex];
         codeIndex += 1;
         resizeImg(img,100, 100);
-        //cropImg(img, 100, 100);
         // Store a pair of images in visible cards array
         let imgClone = img.cloneNode(true);
         visibleCards.push(img);

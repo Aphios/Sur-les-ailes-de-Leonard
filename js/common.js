@@ -36,6 +36,39 @@ function randomInt(max){
     return randInt;
 }
 
+// Fetches images data from an API and returns a Promise
+function fetchDataImgs(url){
+    return new Promise(function (resolve, reject) {
+        var xhr = new XMLHttpRequest();       
+        xhr.addEventListener("load", function(){
+            resolve(JSON.parse(this.responseText).artObjects);
+        });      
+        xhr.addEventListener("error", function () {
+            reject("Impossible de récupérer les données de l'API");
+        });       
+        xhr.open('GET', url);
+        xhr.send();
+    });
+}
+
+// Returns a Promise of the loaded img with some API Data
+function loadImg(artData, alt){
+    return new Promise(function(resolve, reject){
+        let img = new Image();
+        img.crossOrigin = "anonymous";
+        img.width = artData.webImage.width;
+        img.height = artData.webImage.height;
+        img.alt = alt + artData.title;
+        img.addEventListener('load', function () {
+            resolve(img);
+        });
+        img.addEventListener("error", function(){
+            reject("Impossible de charger l'image");
+        });
+        img.src = artData.webImage.url;
+    })
+}
+
 // Modifies an Image by resizing it
 function resizeImg(img, maxWidth, maxHeight){
     let canvas = document.createElement("canvas");

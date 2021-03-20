@@ -1,8 +1,7 @@
-/*$bg-primary: #4e8098;
-$col-primary: #ffeb0f;
-$col-secondary: #0DAB76;
-$neutral-light: #f7f0f5;
-$neutral-dark: #544343;*/
+/*
+$bg-primary: #3b76c4;
+$neutral-light: #f4ede2;
+*/
 @font-face {
   font-family: "Gaegu-Bold";
   src: local("Gaegu Bold"), local("Gaegu-Bold"), url("./fonts/Gaegu-Bold.ttf") format("truetype");
@@ -36,11 +35,10 @@ body {
 .page {
   width: 100%;
   min-height: 700px;
-  color: #f4ede2;
+  color: #ffffff;
   margin: 0 auto;
   height: auto;
-  background: #3b76c4;
-  background: radial-gradient(circle, #3b76c4 0%, #698dbe 100%);
+  background: #3273f1;
 }
 
 h1 {
@@ -48,7 +46,7 @@ h1 {
   font-family: "Gaegu-Bold", cursive;
   padding: 0;
   margin: 0.5em;
-  color: #f4ede2;
+  color: #ffffff;
 }
 
 h2 {
@@ -56,7 +54,7 @@ h2 {
   font-family: "Gaegu-Bold", cursive;
   padding: 0;
   margin: 0.3em;
-  color: #f4ede2;
+  color: #ffffff;
 }
 
 h3 {
@@ -72,11 +70,11 @@ p {
 
 a {
   text-decoration: none;
-  color: #f4ede2;
+  color: #ffffff;
 }
 
 .banner {
-  background-color: #f4ede2;
+  background-color: #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -89,7 +87,7 @@ a {
 }
 .banner__link {
   font-family: "Gaegu-Bold", cursive;
-  color: #383a3d;
+  color: #ffeb0f;
 }
 .banner > .banner__menu {
   display: flex;
@@ -102,7 +100,8 @@ a {
   }
 }
 .banner > .banner__menu .menu__link {
-  color: #383a3d;
+  color: #ffeb0f;
+  font-size: 1.2rem;
 }
 
 .game {
@@ -119,6 +118,27 @@ a {
     width: 100%;
     margin-bottom: 0.5rem;
     margin-top: 0.5rem;
+  }
+}
+.game__zone {
+  background-color: #ffffff;
+  color: #383a3d;
+  width: 60%;
+  border-radius: 10px;
+  margin: 10px auto;
+  padding: 20px;
+}
+.game__zone--large {
+  width: 90%;
+}
+@media (max-width: 1150px) {
+  .game__zone {
+    width: 75%;
+  }
+}
+@media (max-width: 850px) {
+  .game__zone {
+    width: 100%;
   }
 }
 .game__link {
@@ -172,7 +192,7 @@ a {
 }
 .game__icon {
   border-radius: 100%;
-  border: 0.2em solid #5a8ccd;
+  border: 0.2em solid #588df4;
   transition: transform 300ms ease-in;
 }
 .game__icon:hover {
@@ -183,7 +203,7 @@ a {
   top: 10px;
   left: 930px;
   color: #383a3d;
-  background-color: #f4ede2;
+  background-color: #ffffff;
   padding: 10px;
   border-radius: 5px;
   font-size: 1.2rem;
@@ -214,20 +234,17 @@ a {
     margin: auto;
   }
 }
-
-.form__center {
-  width: 60%;
-  margin: auto;
-}
-@media (max-width: 750px) {
-  .form__center {
-    width: 80%;
-  }
+.game__form {
+  width: 90%;
+  position: relative;
 }
 @media (max-width: 400px) {
-  .form__center {
+  .game__form {
     width: 100%;
   }
+}
+.game__form--center {
+  margin: auto;
 }
 
 .card {
@@ -282,8 +299,8 @@ a {
 .btn {
   font-size: 1.1rem;
   font-family: "Gaegu-Bold", cursive;
-  background-color: #ffeb0f;
-  color: #383a3d;
+  background-color: #3273f1;
+  color: #ffeb0f;
   border-radius: 5px;
   padding: 0.3em;
   text-align: center;
@@ -314,7 +331,7 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #ffeb0f;
   font-family: "Gaegu-Bold";
   background-color: rgba(59, 118, 196, 0.85);
@@ -324,7 +341,7 @@ a {
 }
 @media (max-width: 1050px) {
   .popup-msg {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -336,18 +353,31 @@ a {
   height: 731px;
   background: url("imgs/matisse.jpg") no-repeat center;
 }
-@media (max-width: 1050px) {
+@media (max-width: 1100px) {
   .game__dnd {
     width: 500px;
     height: 409px;
     background: url("imgs/matisse_med.jpg") no-repeat center;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 650px) {
   .game__dnd {
     width: 350px;
     height: 286px;
     background: url("imgs/matisse_sm.jpg") no-repeat center;
+  }
+}
+.game__zone--matisse {
+  width: 910px;
+}
+@media (max-width: 1100px) {
+  .game__zone--matisse {
+    width: 515px;
+  }
+}
+@media (max-width: 650px) {
+  .game__zone--matisse {
+    width: 360px;
   }
 }
 
@@ -397,7 +427,7 @@ a {
   left: 54px;
   top: 159px;
 }
-@media (max-width: 1050px) {
+@media (max-width: 1100px) {
   .dnd__elt.elt__cruche {
     left: 100px;
     top: 315px;
@@ -438,7 +468,7 @@ a {
     top: 89px;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 650px) {
   .dnd__elt.elt__cruche {
     left: 70px;
     top: 225px;
@@ -520,7 +550,7 @@ a {
     height: 79px;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 650px) {
   .dnd__zone.zone__cruche {
     left: 179px;
     top: 158px;

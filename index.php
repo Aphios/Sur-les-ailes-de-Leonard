@@ -31,7 +31,7 @@
               <a href="memory.php" alt="lien vers le jeu du mémory">
                 <img class="game__icon" src="imgs/memory_icon.png" alt="Icone du jeu mémory">
               </a>
-              <h3><a class="game__link" href="memory.php" alt="lien vers le jeu du mémory">Memory</a></h3>
+              <h3><a class="game__link" href="memory.php" alt="lien vers le jeu du mémory">Mémory</a></h3>
               <p>Retrouve les paires de cartes</p>
             </div>
             <div class="game__pres">
@@ -45,15 +45,15 @@
               <a href="poesy.php" alt="lien vers le jeu Poesy">
                 <img class="game__icon" src="imgs/poesy_icon.png" alt="Icone du jeu Poesy">
               </a>
-              <h3><a class="game__link" href="poesy.php" alt="lien vers le jeu Poesy">Poesy</a></h3>
+              <h3><a class="game__link" href="poesy.php" alt="lien vers le jeu Poesy">Poésy</a></h3>
               <p>Ecris un morceau de poème</p>
             </div>
             <div class="game__pres">
-              <a href="#" alt="">
-                <img class="game__icon" src="imgs/matisse_icon.png" alt="">
+              <a href="cachecache.php" alt="lien vers le jeu Cache-Cache">
+                <img class="game__icon" src="imgs/cachecache_icon.png" alt="">
               </a>
-              <h3><a class="game__link" href="porte.php" alt="lien vers la porte mystère">Jeu à venir</a></h3>
-              <p>Bientôt un nouveau jeu !</p>
+              <h3><a class="game__link" href="cachecache.php" alt="lien vers le jeu Cache-Cache">Cache-cache</a></h3>
+              <p>Retrouve Léonard</p>
             </div>
             <div class="game__pres">
               <a href="porte.php" alt="lien vers la porte mystère">

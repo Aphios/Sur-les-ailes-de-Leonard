@@ -33,17 +33,23 @@
                 <p>Aide le peintre Matisse a ranger sa chambre.</p>
                 <p>Clique sur les objets, fais-les glisser et depose-les au bon endroit.</p>
             </div>
-    
-            <div class="game__dnd" id="painting">
-                <div class="dnd__zone zone__cruche" id="zone__cruche"></div>
-                <div class="dnd__zone zone__dessin" id="zone__dessin"></div>
-                <div class="dnd__zone zone__statuette" id="zone__statuette"></div>
-                <div class="dnd__elt elt__cruche" id="cruche" draggable="true" ></div>
-                <div class="dnd__elt elt__statuette" id="statuette" draggable="true"></div>
-                <div class="dnd__elt elt__dessin" id="dessin" draggable="true"></div>
+
+            <div class="game__zone game__zone--matisse">
+
+                <div class="game__dnd" id="painting">
+                    <div class="dnd__zone zone__cruche" id="zone__cruche"></div>
+                    <div class="dnd__zone zone__dessin" id="zone__dessin"></div>
+                    <div class="dnd__zone zone__statuette" id="zone__statuette"></div>
+                    <div class="dnd__elt elt__cruche" id="cruche" draggable="true" ></div>
+                    <div class="dnd__elt elt__statuette" id="statuette" draggable="true"></div>
+                    <div class="dnd__elt elt__dessin" id="dessin" draggable="true"></div>
+                </div>
+        
+                <div class="btn__restart--center btn--animated btn" id="restart">Rejouer</div>
+            
             </div>
     
-            <div class="btn__restart--center btn--animated btn" id="restart">Rejouer</div>
+            
             
         </div>
 

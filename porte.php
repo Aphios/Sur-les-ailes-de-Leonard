@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION["points"])){
+  $_SESSION["points"] = 0;           
+}
+?>
+
 <html lang="fr">
   <head>
     <meta charset="utf-8">
@@ -16,6 +23,34 @@
               <p><a class= "menu__link" href="contact.php">Contact</a></p>
             </div>
         </header>
+
+        <div class="game">
+
+        <div class="game__points"><?=$_SESSION["points"]?> points</div>
+
+            <div class="game__header">
+              <h2>La porte mystère</h2>
+              <?php
+                if($_SESSION["points"]<1000){
+                  echo "<p>Zut ! La porte ne veut pas s'ouvrir...</p>";
+                  echo "<p>Tu n'as pas collecté assez de points. Retourne effectuer quelques jeux et reviens ici plus tard.</p>";
+                }else{
+              ?>
+              <p>Bravo ! Tu as réussi à entrer dans le monde étrange caché derrière la porte mystère !</p>
+            </div>
+              
+              <div class="game__zone game__zone--large">
+                <p>Contenu de la page à créer</p>
+              </div>
+              
+            <?php
+              }
+            ?>          
+            </div>
+        </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/porte.js"></script>
 
     </body>
 

@@ -28,43 +28,46 @@
 
             <div class="game__points"><?=$_SESSION["points"]?> points</div>
             <div class="game__header">
-                <h2>Jeu du Memory</h2>
+                <h2>Mémory</h2>
                 <p>Clique sur les images pour retrouver les paires dans le temps imparti !</p>
             </div>
-    
-            <div class="game__grid game__grid--memory"  id="memory">
-                <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="1">
-                <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="2">
-                <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="3">
-                <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="4">
-                <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="5">
-                <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="6">
-                <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="7">
-                <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="8">
-                <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="9">
-                <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="10">
-                <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="11">
-                <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="12">
-                <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="13">
-                <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="14">
-                <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="15">
-                <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="16">
-            </div>
-    
-            <div class="timer">
-                <div class="btn--start btn--animated btn" id="start">Demarrer</div>
-                <div class="timer__progress-bar">
-                    <div class="timer__progress-bar--fill" id="progressbar"></div>
+
+            <div class="game__zone">
+
+                <div class="game__grid game__grid--memory"  id="memory">
+                    <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="1">
+                    <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="2">
+                    <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="3">
+                    <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="4">
+                    <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="5">
+                    <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="6">
+                    <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="7">
+                    <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="8">
+                    <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="9">
+                    <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="10">
+                    <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="11">
+                    <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="12">
+                    <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="13">
+                    <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="14">
+                    <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="15">
+                    <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="16">
                 </div>
+        
+                <div class="timer">
+                    <div class="btn--start btn--animated btn" id="start">Demarrer</div>
+                    <div class="timer__progress-bar">
+                        <div class="timer__progress-bar--fill" id="progressbar"></div>
+                    </div>
+                </div>
+        
+                <div class="btn__restart--center btn--animated btn" id="restart">Rejouer</div>
+            
             </div>
-    
-            <div class="btn__restart--center btn--animated btn" id="restart">Rejouer</div>
             
         </div>
 
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js"></script>
     <script src="js/common.js"></script>
     <script src="js/memory.js"></script>
 
