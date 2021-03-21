@@ -37,7 +37,7 @@
             <div class="game__zone game__zone--large">
 
                 <div class="timer">
-                        <div class="btn--start btn--animated btn" id="start">Demarrer</div>
+                        <div class="btn--start btn--animated btn" id="start">Démarrer</div>
                         <div class="timer__progress-bar">
                             <div class="timer__progress-bar--fill" id="progressbar"></div>
                         </div>

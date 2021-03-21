@@ -24,13 +24,13 @@
             </div>
         </header>
 
-        <div class="game">
+        <div class="game" id="matisse">
 
             <div class="game__points"><?=$_SESSION["points"]?> points</div>
 
             <div class="game__header">
                 <h2>L'atelier de Matisse</h2>
-                <p>Aide le peintre Matisse a ranger sa chambre.</p>
+                <p>Aide le peintre Matisse a ranger son atelier.</p>
                 <p>Clique sur les objets, fais-les glisser et depose-les au bon endroit.</p>
             </div>
 

@@ -44,7 +44,7 @@
     &__zone{
         position:absolute;
         @include set_drag_zone($drag-zones);
-        @media (max-width: 1050px){
+        @media (max-width: 1100px){
             @include set_drag_zone($drag-zones-med);
         }
         @media (max-width: 650px){

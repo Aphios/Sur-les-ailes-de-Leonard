@@ -33,7 +33,8 @@ function dropElt(event){
     let elt = document.getElementById(eltId);
     // If element has been dragged on the correct zone, we move it permanently to this zone
     if(zoneId === eltId){
-        for(let obj of dragData){
+        // for(let obj of dragData){
+        for(obj in dragData){
             if(obj === eltId){
                 elt.className = "dnd__elt elt__" + eltId + " elt__found";
                 break;
@@ -51,18 +52,32 @@ function dropElt(event){
     }
 }
 
-//Allow drop on drop zones
-zoneCruche.addEventListener('dragover', allowDrop);
-zoneStatuette.addEventListener('dragover', allowDrop);
-zoneDessin.addEventListener('dragover', allowDrop);
 
-// Initiliaze movement on draggable items
-cruche.addEventListener('dragstart', moveElt);
-statuette.addEventListener('dragstart', moveElt);
-dessin.addEventListener('dragstart', moveElt);
+if(window.navigator.userLanguage){
+    document.getElementById("matisse").style.display = "none";
+    let alertmsg = document.createElement("p");
+    alertmsg.innerText = "Ce jeu n'est pas pris en charge par Internet Explorer (il utilise l'API Drag and Drop). Change de navigateur pour pouvoir y accéder.";
+    alertmsg.className = "game__header";
+    document.getElementById("page").appendChild(alertmsg);
+}else{
+    //Allow drop on drop zones
+    zoneCruche.addEventListener('dragover', allowDrop);
+    zoneStatuette.addEventListener('dragover', allowDrop);
+    zoneDessin.addEventListener('dragover', allowDrop);
 
-// Handle drop on dropzones
-zoneCruche.addEventListener("drop", dropElt);
-zoneDessin.addEventListener("drop", dropElt);
-zoneStatuette.addEventListener("drop", dropElt);
+    // Initiliaze movement on draggable items
+    cruche.addEventListener('dragstart', moveElt);
+    statuette.addEventListener('dragstart', moveElt);
+    dessin.addEventListener('dragstart', moveElt);
+
+    // Handle drop on dropzones
+    zoneCruche.addEventListener("drop", dropElt);
+    zoneDessin.addEventListener("drop", dropElt);
+    zoneStatuette.addEventListener("drop", dropElt);
+
+}
+
+
+
+
 

@@ -24,7 +24,7 @@
             </div>
         </header>
 
-        <div class="game">
+        <div class="game" id="game-memory">
 
             <div class="game__points"><?=$_SESSION["points"]?> points</div>
             <div class="game__header">
@@ -54,7 +54,7 @@
                 </div>
         
                 <div class="timer">
-                    <div class="btn--start btn--animated btn" id="start">Demarrer</div>
+                    <div class="btn--start btn--animated btn" id="start">Démarrer</div>
                     <div class="timer__progress-bar">
                         <div class="timer__progress-bar--fill" id="progressbar"></div>
                     </div>
