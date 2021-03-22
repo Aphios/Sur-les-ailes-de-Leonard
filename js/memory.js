@@ -18,8 +18,8 @@ var codes = ["a", "b", "c", "d", "e", "f", "g", "h"];
 var visibleCards = [];
 var hiddenCards = document.getElementsByClassName("game__grid-card");
 
-var timeOut; // Timeout
 var memory = document.getElementById("memory"); // Memory playground
+var timerEnd; // Timeout after which card event listeners are removed
 
 // **** FUNCTIONS ****
 
@@ -67,26 +67,39 @@ function flipCard() {
     }
     // Check if the game has been won
     if (pairs === TOTAL_PAIRS) {
-        endgame(true);
+        endGame(true, memory, 400);
+        clearTimeout(timerEnd);
     }
 };
 
 // Launches the game with a timeout
-function play() {
-    // Each default card may be flipped to see its color
+function playMemory() {
+    // Each default card may be flipped to see its content
     for (let card of hiddenCards) {
         card.addEventListener("click", flipCard);
     }
-    // Launch progress bar and timeout
+    startTimer(50000, memory, playMemory, 400, 200);
+    timerEnd = setTimeout(function () { 
+        // Disable flipping cards
+        for (let card of hiddenCards) {
+            card.removeEventListener("click", flipCard);
+        } 
+        clearTimeout(timerEnd);
+    }, 50000);
+
+    /*
+    // Launch progress bar and timeout   
     progressbar.style.transform = "scaleX(1)";
-    timeOut = setTimeout(function () { endgame(false) }, 30000);
+    timeOut = setTimeout(function () { endmemory(false) }, 50000);
     // Disable the start button whilst game runs
     startBtn.removeEventListener("click", play);
     startBtn.classList.remove("btn--animated");
+    */
 };
 
-// Ends the game
-function endgame(win) {
+
+/* Ends the game
+function endgame(win);
     if (win) {
         memory.appendChild(winMsg);
         sendPoints("http://localhost/Projets_sass/sur-les-ailes-de-leonard/ajax_pts.php", 400, true);
@@ -102,6 +115,8 @@ function endgame(win) {
     clearTimeout(timeOut);
     progressbar.style.display = "none";
 }
+*/
+
 
 // MAIN
 //Create request to rijks API with random page number and 8 results per page
@@ -109,7 +124,7 @@ let randPage = randomInt(100);
 let url = "https://www.rijksmuseum.nl/api/en/collection?key=QhuX4FUw&ps=8&imgonly=true&p=" + randPage;
 
 // Fetch API data
-fetchDataImgs(url)
+fetchData(url)
     // Create images and related data and wait for each image to be loaded
     .then(function (artData) {
         let promises = [];
@@ -135,55 +150,7 @@ fetchDataImgs(url)
             visibleCards[i].dataset.index = i + 1;
         }
         // Enable the game to start by activating start button
-        startBtn.addEventListener("click", play);
+        startBtn.addEventListener("click", playMemory);
     }).catch(function (err) {
         console.error(err);
     });
-
-
-
-
-
-
-/*
-PREVIOUS CODE WITH COLORED SQUARES AS CARDS
-Create an array of 16 colored cards (8 different colors)
-codes = shuffleArray(codes);
-for(let i=0; i<codes.length; i++){
-    let image = document.createElement("img");
-    image.src = "./imgs/" + codes[i] + ".png";
-    image.alt = "colored memory card";
-    image.className = "game__grid-card card";
-    image.dataset.index = i+1;
-    image.dataset.code = codes[i];
-    visibleCards.push(image);
-}
-
-xhr.addEventListener("load", function () {
-    let artCollection = JSON.parse(this.responseText).artObjects;
-    for (let art of artCollection) {
-        // We construct a new Image from the data sent by Rijks'API
-        var img = new Image();
-        img.crossOrigin = "anonymous";
-        img.width = art.webImage.width;
-        img.height = art.webImage.height;
-        img.alt = "illustration Mémory : " + art.title;
-        img.className = "game__grid-card card";
-        img.dataset.code = codes[codeIndex];
-        codeIndex += 1;
-        // We resize and crop the image to a 100*100px format
-        img.addEventListener("load", function(){
-            resizeImg(this, 200, 200);
-            cropImg(this, 100, 100);
-            // We insert a pair of the image in our cards collection
-            var imgClone = this.cloneNode(true);
-            visibleCards.push(this);
-            visibleCards.push(imgClone);
-        });
-        img.src = art.webImage.url;
-    }
-
-});
-xhr.send();
-*/
-

@@ -1,18 +1,6 @@
 // ------------------- Base ------------------------------
 // Contains common rules such as box-sizing and custom fonts
 
-@font-face{
-    font-family: "Gaegu-Bold";
-    src: local("Gaegu Bold"), local("Gaegu-Bold"), url("./fonts/Gaegu-Bold.ttf") format('truetype');
-    font-weight: bold;
-}
-
-@font-face{
-    font-family: "Gaegu-Regular";
-    src: local("Gaegu Regular"), local("Gaegu-Regular"), url("./fonts/Gaegu-Regular.ttf") format('truetype');
-    font-weight: 400;
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@0;1&family=Macondo+Swash+Caps&display=swap');
 
 html{

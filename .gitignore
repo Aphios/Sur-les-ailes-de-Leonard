@@ -10,3 +10,4 @@ node_modules/*
 imgs/bleuet*
 package-lock.json
 package.json
+js/discarded.js

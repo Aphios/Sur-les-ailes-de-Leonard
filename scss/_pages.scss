@@ -1,7 +1,7 @@
 // --------------- Pages -----------------
 // Contains components specific to a page
 
-/*L'atelier de Matisse */  
+// L'atelier de Matisse  
 
 .game{
     &__dnd{
@@ -53,5 +53,65 @@
     }
 }
 
+// Poésy
+.game{
+    &__illustration{
+        position: absolute;
+        right:30px;
+        bottom: 20px;
+    }
+}
+
+// Cache-cache
+.game{
+    &__clic{
+        position: relative;
+        margin: 0.4rem auto;
+        @include img_bg(890px, 580px, "imgs/eden.jpg");
+        @media (max-width:1150px){
+            @include img_bg(600px, 391px, "imgs/eden_med.jpg");
+        }
+        @media (max-width: 790px){
+            @include img_bg(400px, 261px, "imgs/eden_sm.jpg");
+        }
+        @media (max-width: 550px){
+            @include img_bg(350px, 479px, "imgs/eden_tiny.jpg");
+        }
+
+    }
+    &__zone--cc{
+        width:910px;
+        @media (max-width: 1150px){
+            width: 615px;
+        }
+        @media (max-width: 790px){
+            width: 410px;
+        }
+        @media (max-width: 550px){
+            width: 360px;
+        }
+    }
+}
+
+.clic{
+    &__zone{
+        position: absolute;
+        z-index: 1;
+        @include pos_from_map($cache);
+        @include size_from_map($cache);
+        @media (max-width:1150px){
+            @include pos_from_map($cache_med);
+            @include size_from_map($cache_med);
+        }
+        @media (max-width: 790px){
+            @include pos_from_map($cache_sm);
+            @include size_from_map($cache_sm);
+        }
+        @media (max-width: 550px){
+            @include pos_from_map($cache_tiny);
+            @include size_from_map($cache_tiny);
+        }
+    }
+}
 
 

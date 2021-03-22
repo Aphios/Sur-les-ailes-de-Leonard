@@ -8,7 +8,9 @@ var lostMsg = winMsg.cloneNode(true);
 winMsg.innerText = "Bravo !";
 lostMsg.innerText = "Perdu !";
 var page = document.getElementById("page");
-var restartBtn = document.getElementById("restart");
+
+// Common variables
+var timeOut; // Timeout
 
 // Common event listeners
 restartBtn.addEventListener("click", function(){
@@ -36,8 +38,14 @@ function randomInt(max){
     return randInt;
 }
 
-// Fetches images data from an API and returns a Promise
-function fetchDataImgs(url){
+// Images Data Functions
+
+/**
+ * Fetches web data from an API
+ * @param {String} url the ressource to fetch
+ * @returns Promise with data
+ */
+function fetchData(url){
     return new Promise(function (resolve, reject) {
         var xhr = new XMLHttpRequest();       
         xhr.addEventListener("load", function(){
@@ -51,7 +59,12 @@ function fetchDataImgs(url){
     });
 }
 
-// Returns a Promise of the loaded img with some API Data
+/**
+ * Loads an image from web data
+ * @param {Promise} artData the data collected from an API
+ * @param {String} alt the alt parameter of the image
+ * @returns Promise of loaded Image
+ */
 function loadImg(artData, alt){
     return new Promise(function(resolve, reject){
         let img = new Image();
@@ -69,7 +82,12 @@ function loadImg(artData, alt){
     })
 }
 
-// Modifies an Image by resizing it
+/**
+ * Resizes an image
+ * @param {Image} img 
+ * @param {int} maxWidth 
+ * @param {int} maxHeight 
+ */
 function resizeImg(img, maxWidth, maxHeight){
     let canvas = document.createElement("canvas");
     let ctx = canvas.getContext("2d");
@@ -95,38 +113,14 @@ function resizeImg(img, maxWidth, maxHeight){
     img.src = canvas.toDataURL();
 }
 
-// Modifies an Image by cropping it to its center
-function cropImg(img, maxWidth, maxHeight){
-    let outputWidth = img.width;
-    let outputHeight = img.height;
-    // Calculate the desired aspect ratio of our output image
-    let ratio = maxWidth/maxHeight;
-    // Calculate the initial aspect ratio of our input image
-    let inputImgRatio = img.width/img.height;
-    // if the initial image ratio is bigger than the target ratio
-    if (inputImgRatio > ratio) {
-        outputWidth = img.height * ratio;
-    } else if (inputImgRatio < ratio) {
-        outputHeight = img.width / ratio;
-    }
-    let canvas = document.createElement("canvas");
-    canvas.width = outputWidth;
-    canvas.height = outputHeight;
-    // calculate the position to draw the image at
-    let outputX = (outputWidth - img.width) * 0.5;
-    let outputY = (outputHeight - img.height) * 0.5;
-    let ctx = canvas.getContext("2d");
-    ctx.drawImage(img, outputX, outputY);
-    img.width = outputWidth;
-    img.height = outputHeight;
-    img.src = canvas.toDataURL();
-}
+// Game functions
 
-/* Sends points information to PHP server
-** url : destination
-** pts : the amount of points
-** add : true if we need to add points, false otherwise
-*/
+/**
+ * Sends information to server on player game points to add or deduct
+ * @param {String} url destination on server
+ * @param {int} pts number of points to add or deduct
+ * @param {bool} add true for adding, false for deducting
+ */
 function sendPoints(url, pts, add){
     let request = new XMLHttpRequest();
     request.open("POST", url);
@@ -136,4 +130,42 @@ function sendPoints(url, pts, add){
     });
     request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     request.send("points="+pts+"&addition="+add);
+}
+
+/**
+ * Starts the timer and calls the endgame function when it's over
+ * @param {int} secs : timer duration in seconds
+ * @param {*} parentElt :the element to which we'll attach the endgame message
+ * @param {int} ptsAdd  : number of points to add
+ * @param {int} ptsDeduct : optional, number of points to deduct
+ * @param {Function} playFunc : the function called to start the game
+ */
+function startTimer(secs, parentElt, playFunc, ptsAdd, ptsDeduct){
+    progressbar.style.transform = "scaleX(1)";
+    timeOut = setTimeout(function () { endGame(false, parentElt, ptsAdd, ptsDeduct) }, secs);
+    // Disable the start button whilst game runs
+    startBtn.removeEventListener("click", playFunc);
+    startBtn.classList.remove("btn--animated");
+}
+
+/**
+ * 
+ * @param {bool} win : true if game was won, false if it was lost
+ * @param {*} parentElt : the element to which we'll attach the endgame message
+ * @param {int} ptsAdd : number of points to add
+ * @param {int} ptsDeduct : optional, number of points to deduct
+ */
+function endGame(win, parentElt, ptsAdd, ptsDeduct) {
+    if (win) {
+        parentElt.appendChild(winMsg);
+        sendPoints("http://localhost/Projets_sass/sur-les-ailes-de-leonard/ajax_pts.php", ptsAdd, true);
+    } else {
+        parentElt.appendChild(lostMsg);
+        if (typeof ptsDeduct !== 'undefined'){
+            sendPoints("http://localhost/Projets_sass/sur-les-ailes-de-leonard/ajax_pts.php", ptsDeduct, false);
+        }
+    }
+    // Stop timer and reset progressbar
+    clearTimeout(timeOut);
+    progressbar.style.display = "none";
 }

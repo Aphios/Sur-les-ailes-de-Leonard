@@ -94,9 +94,7 @@ a{
         border-radius: 10px;
         margin: 10px auto;
         padding: 20px;
-        &--large{
-            width: 90%;
-        }
+        position: relative;
         @media (max-width: 1150px){
             width: 75%;
         }

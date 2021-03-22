@@ -33,8 +33,7 @@ function dropElt(event){
     let elt = document.getElementById(eltId);
     // If element has been dragged on the correct zone, we move it permanently to this zone
     if(zoneId === eltId){
-        // for(let obj of dragData){
-        for(obj in dragData){
+        for(let obj of dragData){
             if(obj === eltId){
                 elt.className = "dnd__elt elt__" + eltId + " elt__found";
                 break;

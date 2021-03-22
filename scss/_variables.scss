@@ -1,10 +1,6 @@
 // ---------Variables & Mixins ---------- 
 
-/*
-$title-font: 'Gaegu-Bold', cursive;
-$txt-font:'Gaegu-Regular', cursive;
-*/
-
+// General
 $title-font:'Macondo Swash Caps', cursive;
 $txt-font: 'Josefin Sans', sans-serif;
 
@@ -14,6 +10,7 @@ $neutral-dark: #383a3d;
 $col-primary: #ffeb0f;
 $col-secondary: #ac004a;
 
+// Matisse
 $drag-elts: (
     cruche: (left:160px, top:562px, background-image: url("imgs/cruche.png"), background-repeat: no-repeat, background-position: center, width: 46px, height: 50px), 
     dessin: (left:418px, top:591px, background-image: url("imgs/dessin.png"), background-repeat: no-repeat, background-position: center, width: 68px, height: 89px), 
@@ -36,6 +33,13 @@ $drag-elts-sm: (cruche: (left: 70px, top: 225px, background-image: url("imgs/cru
 
 $drag-zones-sm: (cruche:(left: 179px, top: 158px, width: 15px, height: 28px), dessin:(left: 72px, top: 63px, width: 25px, height: 36px), statuette:(left: 19px, top: 61px, width: 30px, height: 55px));
 
+//Cache-cache
+$cache: (top:510px, left: 552px, width: 12px, height: 16px);
+$cache_med: (top:344px, left: 372px, width: 10px, height: 10px);
+$cache_sm: (top: 229px, left: 248px, width: 5px, height: 8px);
+$cache_tiny: (top: 422px, left: 306px, width: 11px, height: 12px);
+
+// Mixins
 @mixin pos_from_map($map){
     left: map-get($map, left);
     top: map-get($map, top);

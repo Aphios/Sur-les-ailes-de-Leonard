@@ -37,6 +37,8 @@
 
           <div class="game__zone">
 
+            <div class="game__illustration"><img src="imgs/poesy_illustration2.png" alt="Illustration : Léonard sur une fleur"></div>
+
             <form action="poesy.php" class="game__form" method="post">
               <p><label for="strophe">Ecris ton vers ici : </label><input type="text" name="strophe" id="strophe" maxlength="200" size="50" required /></p>
               <input type="submit" class="btn btn--animated btn__submit" value="Envoyer" />

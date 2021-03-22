@@ -1,18 +1,4 @@
-/*
-$title-font: 'Gaegu-Bold', cursive;
-$txt-font:'Gaegu-Regular', cursive;
-*/
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@0;1&family=Macondo+Swash+Caps&display=swap");
-@font-face {
-  font-family: "Gaegu-Bold";
-  src: local("Gaegu Bold"), local("Gaegu-Bold"), url("./fonts/Gaegu-Bold.ttf") format("truetype");
-  font-weight: bold;
-}
-@font-face {
-  font-family: "Gaegu-Regular";
-  src: local("Gaegu Regular"), local("Gaegu-Regular"), url("./fonts/Gaegu-Regular.ttf") format("truetype");
-  font-weight: 400;
-}
 html {
   box-sizing: border-box;
   font-size: 18px;
@@ -128,9 +114,7 @@ a {
   border-radius: 10px;
   margin: 10px auto;
   padding: 20px;
-}
-.game__zone--large {
-  width: 90%;
+  position: relative;
 }
 @media (max-width: 1150px) {
   .game__zone {
@@ -289,7 +273,7 @@ a {
   width: 300px;
   transform-origin: left;
   transform: scaleX(0);
-  transition: transform 30s linear;
+  transition: transform 50s linear;
 }
 @media (max-width: 400px) {
   .timer__progress-bar--fill {
@@ -334,7 +318,7 @@ a {
   transform: translate(-50%, -50%);
   font-size: 2.5rem;
   color: #ffeb0f;
-  font-family: "Gaegu-Bold";
+  font-family: "Macondo Swash Caps", cursive;
   background-color: rgba(59, 118, 196, 0.85);
   padding: 0.5em;
   border-radius: 0.5em;
@@ -346,7 +330,6 @@ a {
   }
 }
 
-/*L'atelier de Matisse */
 .game__dnd {
   margin: 0.4rem auto;
   position: relative;
@@ -569,6 +552,92 @@ a {
     top: 61px;
     width: 30px;
     height: 55px;
+  }
+}
+
+.game__illustration {
+  position: absolute;
+  right: 30px;
+  bottom: 20px;
+}
+
+.game__clic {
+  position: relative;
+  margin: 0.4rem auto;
+  width: 890px;
+  height: 580px;
+  background: url("imgs/eden.jpg") no-repeat center;
+}
+@media (max-width: 1150px) {
+  .game__clic {
+    width: 600px;
+    height: 391px;
+    background: url("imgs/eden_med.jpg") no-repeat center;
+  }
+}
+@media (max-width: 790px) {
+  .game__clic {
+    width: 400px;
+    height: 261px;
+    background: url("imgs/eden_sm.jpg") no-repeat center;
+  }
+}
+@media (max-width: 550px) {
+  .game__clic {
+    width: 350px;
+    height: 479px;
+    background: url("imgs/eden_tiny.jpg") no-repeat center;
+  }
+}
+.game__zone--cc {
+  width: 910px;
+}
+@media (max-width: 1150px) {
+  .game__zone--cc {
+    width: 615px;
+  }
+}
+@media (max-width: 790px) {
+  .game__zone--cc {
+    width: 410px;
+  }
+}
+@media (max-width: 550px) {
+  .game__zone--cc {
+    width: 360px;
+  }
+}
+
+.clic__zone {
+  position: absolute;
+  z-index: 1;
+  left: 552px;
+  top: 510px;
+  width: 12px;
+  height: 16px;
+}
+@media (max-width: 1150px) {
+  .clic__zone {
+    left: 372px;
+    top: 344px;
+    width: 10px;
+    height: 10px;
+  }
+}
+@media (max-width: 790px) {
+  .clic__zone {
+    left: 248px;
+    top: 229px;
+    width: 5px;
+    height: 8px;
+  }
+}
+@media (max-width: 550px) {
+  .clic__zone {
+    left: 306px;
+    top: 422px;
+    width: 11px;
+    height: 12px;
   }
 }
 

@@ -34,7 +34,12 @@
                 <p>Retrouve le vite et clique sur lui avant que le temps ne soit écoulé !</p>
             </div>
 
-            <div class="game__zone game__zone--large">
+            <div class="game__zone game__zone--cc">
+
+                <div class="game__clic" id="eden">
+                    <div class="clic__zone" id="leonard">
+                    </div>
+                </div>
 
                 <div class="timer">
                         <div class="btn--start btn--animated btn" id="start">Démarrer</div>
@@ -56,7 +61,7 @@
 
         
     <script src="js/common.js"></script>
-    <script src="js/matisse.js"></script>
+    <script src="js/cachecache.js"></script>
     
 </body>
 </html>
