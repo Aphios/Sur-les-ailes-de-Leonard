@@ -1,5 +1,5 @@
 
-// **** CONSTANTS ****
+// TODO refaire avec les nouvelles classes
 
 const TOTAL_PAIRS = 8; // Number of pairs to be found
 
@@ -12,9 +12,9 @@ var hiddenPair = [];
 var pairs = 0; // Number of pairs found by player
 
 // Cards
-var codeIndex = 0;
+var codeIndex = 0; // NOT IN GAME
 //var codes = ["red", "red", "blue", "blue", "green", "green", "turquoise", "turquoise", "yellow", "yellow", "pink", "pink", "violet", "violet", "orange", "orange"];
-var codes = ["a", "b", "c", "d", "e", "f", "g", "h"];
+var cardCodes = ["a", "b", "c", "d", "e", "f", "g", "h"];
 var visibleCards = [];
 var hiddenCards = document.getElementsByClassName("game__grid-card");
 
@@ -70,7 +70,7 @@ function flipCard() {
         endGame(true, memory, 400);
         clearTimeout(timerEnd);
     }
-};
+}
 
 // Launches the game with a timeout
 function playMemory() {
@@ -136,7 +136,7 @@ fetchData(url)
         // Add attributes and reshape to each image
         for (let img of imgs) {
             img.className = "game__grid-card card";
-            img.dataset.code = codes[codeIndex];
+            img.dataset.code = cardCodes[codeIndex];
             codeIndex += 1;
             resizeImg(img, 100, 100);
             // Store a pair of images in visible cards array

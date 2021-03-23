@@ -1,13 +1,11 @@
 #Ignore info and test files
 fiche_projet.txt
-fonts/SIL Open Font License.txt
-test_api_rijks.html
 imgs/credits.txt
 imgs/matisse.xcf
 moodboard/*
-DBTester.php
 node_modules/*
-imgs/bleuet*
 package-lock.json
 package.json
-js/discarded.js
+_previous/*
+_discarded/*
+_tmp/*

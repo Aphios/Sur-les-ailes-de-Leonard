@@ -1,6 +1,4 @@
-/* Idées d'amélioration :
-- Pour corser la difficulté, il faudrait ajouter d'autres zones de drop "pièges"
-*/
+//TODO refaire avec nouvelles classes
 
 var cruche = document.getElementById("cruche");
 var statuette = document.getElementById("statuette");

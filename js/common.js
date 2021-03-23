@@ -1,21 +1,5 @@
 // Common DOM Elements
-var startBtn = document.getElementById("start");
-var restartBtn = document.getElementById("restart");
-var progressbar = document.getElementById("progressbar");
-var winMsg = document.createElement("div");
-winMsg.className = "popup-msg";
-var lostMsg = winMsg.cloneNode(true);
-winMsg.innerText = "Bravo !";
-lostMsg.innerText = "Perdu !";
 var page = document.getElementById("page");
-
-// Common variables
-var timeOut; // Timeout
-
-// Common event listeners
-restartBtn.addEventListener("click", function(){
-    window.location.reload();
-});
 
 // Common functions
 function shuffleArray(array) {
@@ -111,61 +95,4 @@ function resizeImg(img, maxWidth, maxHeight){
     img.width = width;
     img.height = height;
     img.src = canvas.toDataURL();
-}
-
-// Game functions
-
-/**
- * Sends information to server on player game points to add or deduct
- * @param {String} url destination on server
- * @param {int} pts number of points to add or deduct
- * @param {bool} add true for adding, false for deducting
- */
-function sendPoints(url, pts, add){
-    let request = new XMLHttpRequest();
-    request.open("POST", url);
-    request.setRequestHeader("X-Requested-With", "xmlhttprequest");
-    request.addEventListener("load", function () {
-        console.log(request.responseText);
-    });
-    request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    request.send("points="+pts+"&addition="+add);
-}
-
-/**
- * Starts the timer and calls the endgame function when it's over
- * @param {int} secs : timer duration in seconds
- * @param {*} parentElt :the element to which we'll attach the endgame message
- * @param {int} ptsAdd  : number of points to add
- * @param {int} ptsDeduct : optional, number of points to deduct
- * @param {Function} playFunc : the function called to start the game
- */
-function startTimer(secs, parentElt, playFunc, ptsAdd, ptsDeduct){
-    progressbar.style.transform = "scaleX(1)";
-    timeOut = setTimeout(function () { endGame(false, parentElt, ptsAdd, ptsDeduct) }, secs);
-    // Disable the start button whilst game runs
-    startBtn.removeEventListener("click", playFunc);
-    startBtn.classList.remove("btn--animated");
-}
-
-/**
- * 
- * @param {bool} win : true if game was won, false if it was lost
- * @param {*} parentElt : the element to which we'll attach the endgame message
- * @param {int} ptsAdd : number of points to add
- * @param {int} ptsDeduct : optional, number of points to deduct
- */
-function endGame(win, parentElt, ptsAdd, ptsDeduct) {
-    if (win) {
-        parentElt.appendChild(winMsg);
-        sendPoints("http://localhost/Projets_sass/sur-les-ailes-de-leonard/ajax_pts.php", ptsAdd, true);
-    } else {
-        parentElt.appendChild(lostMsg);
-        if (typeof ptsDeduct !== 'undefined'){
-            sendPoints("http://localhost/Projets_sass/sur-les-ailes-de-leonard/ajax_pts.php", ptsDeduct, false);
-        }
-    }
-    // Stop timer and reset progressbar
-    clearTimeout(timeOut);
-    progressbar.style.display = "none";
 }
