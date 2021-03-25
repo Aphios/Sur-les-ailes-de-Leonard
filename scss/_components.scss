@@ -74,6 +74,10 @@
             margin: 5px auto;
         }
     }
+    &__time{
+        color: $neutral-light;
+        background-color: $col-secondary;
+    }
 }
 
 .popup-msg{

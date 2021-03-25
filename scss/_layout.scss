@@ -95,6 +95,7 @@ a{
         margin: 10px auto;
         padding: 20px;
         position: relative;
+        min-height: 300px;
         @media (max-width: 1150px){
             width: 75%;
         }
@@ -196,6 +197,11 @@ a{
     }
 }
 
+.form__txtarea{
+    font-family: $txt-font;
+    font-size: 0.8rem;
+    color: $neutral-dark;
+}
 
 
 

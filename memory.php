@@ -54,10 +54,10 @@
                 </div>
         
                 <div class="timer">
-                    <div class="btn--start btn--animated btn" id="start">Démarrer</div>
-                    <div class="timer__progress-bar">
-                        <div class="timer__progress-bar--fill" id="progressbar"></div>
-                    </div>
+                        <div class="btn__time btn" id="start">Temps</div>
+                        <div class="timer__progress-bar">
+                            <div class="timer__progress-bar--fill" id="progressbar"></div>
+                        </div>
                 </div>
         
                 <div class="btn__restart--center btn--animated btn" id="restart">Rejouer</div>
@@ -69,6 +69,7 @@
     </div>
 
     <script src="js/common.js"></script>
+    <script src="js/GameManagers.js"></script>
     <script src="js/memory.js"></script>
 
 </body>

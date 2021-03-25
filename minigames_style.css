@@ -115,6 +115,7 @@ a {
   margin: 10px auto;
   padding: 20px;
   position: relative;
+  min-height: 300px;
 }
 @media (max-width: 1150px) {
   .game__zone {
@@ -232,6 +233,12 @@ a {
   margin: auto;
 }
 
+.form__txtarea {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 0.8rem;
+  color: #383a3d;
+}
+
 .card {
   transition: opacity 300ms cubic-bezier(0.04, 1.01, 0.76, 0.53);
 }
@@ -308,6 +315,10 @@ a {
 .btn__submit--center {
   display: block;
   margin: 5px auto;
+}
+.btn__time {
+  color: #ffffff;
+  background-color: #ac004a;
 }
 
 .popup-msg {

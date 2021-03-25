@@ -4,9 +4,6 @@ class GameManager {
         this.domGame = domGame;
         this.ptsAdd = ptsAdd;
         this.ptsDeduct = ptsDeduct;
-        this.interactiveElts = interactiveElts;
-        this.playEvent = playEvent;
-        this.playFunc = playFunc;
         this.timeOut = null;
         this.progressbar = document.getElementById("progressbar");
         this.winMsg = document.createElement("div");
@@ -17,20 +14,26 @@ class GameManager {
         this.restartBtn = document.getElementById("restart");
     }
 
+    /**
+     * Starts the game timer and enables restart button
+     */
     launch() {
-        this.startTimer();
         this.restartBtn.addEventListener("click", function () {
             window.location.reload();
         });
-    }
-
-    startTimer() {
         this.progressbar.style.transform = "scaleX(1)";
-        this.timeOut = setTimeout(function () {
-            this.endGame(false, this.domGame, this.ptsAdd, this.ptsDeduct)
+        /*this.timeOut = setTimeout(function () {
+            this.endGame(false);
+        }, this.duration);*/
+        this.timeOut = setTimeout( () => { 
+            this.endGame(false); 
         }, this.duration);
     }
 
+    /**
+     * Displays endgame message, add or deducts player points and clears progressbar
+     * @param {bool} win indicates whether the game is won or lost
+     */
     endGame(win) {
         if (win) {
             this.domGame.appendChild(this.winMsg);
@@ -66,11 +69,12 @@ class CacheCacheManager extends GameManager{
     constructor(duration, domGame, ptsAdd, ptsDeduct, hiddenElt){
         super(duration, domGame, ptsAdd, ptsDeduct);
         this.hiddenElt = hiddenElt;
+        this.winCacheCache = this.winCacheCache.bind(this);
     }
 
     launch(){
-        super();
-        this.hiddenElt.addEventListener("Click", this.winCacheCache);
+        super.launch();
+        this.hiddenElt.addEventListener("click", this.winCacheCache);
     }
 
     winCacheCache(){
@@ -78,45 +82,54 @@ class CacheCacheManager extends GameManager{
     }
 
     endGame(win){
-        super(win);
+        super.endGame(win);
         this.hiddenElt.removeEventListener("click", this.winCacheCache);
     }
 }
 
 class MemoryManager extends GameManager{
-    constructor(duration, domGame, ptsAdd, ptsDeduct, totalPairs, hiddenCards, cardCodes){
+    constructor(duration, domGame, ptsAdd, ptsDeduct, totalPairs, hiddenCards, visibleCards, cardCodes){
         super(duration, domGame, ptsAdd, ptsDeduct);
         this.totalPairs = totalPairs; // Number of pairs to be found
         this.cardCodes = cardCodes;  // Card identifiers
         this.hiddenCards = hiddenCards;  // array containing the dom hidden card elements
-        this.visibleCards = [];  // contains the dom visible card elements
+        this.visibleCards = visibleCards;  // contains the dom visible card elements
         this.hiddenPair = [];  // cache for the hidden side of cards displayed on screen
         this.visiblePair = [];  // cache for the visible side of cards displayed on screen
         this.pairs = 0;  // Counts the number of pairs the player finds
+        this.flipCard = this.flipCard.bind(this);
     }
 
     launch(){
-        super();
+        super.launch();
         for (let card of this.hiddenCards) {
             card.addEventListener("click", this.flipCard);
         }
     }
 
     endGame(win){
-        super(win);
+        super.endGame(win);
         for (let card of this.hiddenCards) {
             card.removeEventListener("click", this.flipCard);
         } 
     }
 
-    // Replaces visible side card by hidden side one and reset the cache
+    /**
+     * Replaces the visible side of a card (image) by its hidden side (cover)
+     * @param {int} cacheIndex the index of the cached cards that must be switched
+     */
     hide(cacheIndex) {
         this.visiblePair[cacheIndex].parentNode.replaceChild(this.hiddenPair[cacheIndex], this.visiblePair[cacheIndex]);
         this.visiblePair[cacheIndex] = null;
         this.hiddenPair[cacheIndex] = null;
     }
 
-    // Replaces the hidden side card by the visible side card of matching index and cache them
+    /**
+     * Replaces the hidden side of a card (cover) by its visible side (image)
+     * hidden and visible card elements are put in a cache
+     * @param {domElement} hiddenCard : the card to be flipped
+     * @param {int} cacheIndex  : the index of the cache array where the cards need to be put in
+     */
     reveal(hiddenCard, cacheIndex) {
         for (let card of this.visibleCards) {
             if (card.dataset.index === hiddenCard.dataset.index) {
@@ -128,7 +141,12 @@ class MemoryManager extends GameManager{
         }
     }
 
-    // Handles cards flipping and cards comparison
+    /**
+     * Handles card flipping and pair comparison
+     * If a pair is found, it stays displayed
+     * If all pairs are found, the game is won
+     * @param {domEvent} e : the click event that triggered flipCard
+     */
     flipCard(e) {
         if (this.visiblePair[0] && this.visiblePair[1]) {
             // Pair did not match : hide both cards and reveal new one
@@ -152,7 +170,7 @@ class MemoryManager extends GameManager{
             }
         }
         // Check if the game has been won
-        if (this.hiddenPairpairs === this.totalPairs) {
+        if (this.pairs === this.totalPairs) {
             this.endGame(true);
         }
     }
@@ -168,45 +186,54 @@ class MatisseManager extends GameManager{
         this.zoneStatuette = document.getElementById("zone__statuette");
         this.zoneDessin = document.getElementById("zone__dessin");
         this.dragData = ["cruche", "dessin", "statuette"];
+        this.allowDrop = this.allowDrop.bind(this);
+        this.moveElt = this.moveElt.bind(this);
+        this.dropElt = this.dropElt.bind(this);
     }
 
     launch(){
-        super();
+        super.launch();
         //Allow drop on drop zones
-        this.zoneCruche.addEventListener('dragover', allowDrop);
-        this.zoneStatuette.addEventListener('dragover', allowDrop);
-        this.zoneDessin.addEventListener('dragover', allowDrop);
+        this.zoneCruche.addEventListener('dragover', this.allowDrop);
+        this.zoneStatuette.addEventListener('dragover', this.allowDrop);
+        this.zoneDessin.addEventListener('dragover', this.allowDrop);
         // Initiliaze movement on draggable items
-        this.cruche.addEventListener('dragstart', moveElt);
-        this.statuette.addEventListener('dragstart', moveElt);
-        this.dessin.addEventListener('dragstart', moveElt);
+        this.cruche.addEventListener('dragstart', this.moveElt);
+        this.statuette.addEventListener('dragstart', this.moveElt);
+        this.dessin.addEventListener('dragstart', this.moveElt);
         // Handle drop on dropzones
-        this.zoneCruche.addEventListener("drop", dropElt);
-        this.zoneDessin.addEventListener("drop", dropElt);
-        this.zoneStatuette.addEventListener("drop", dropElt);
+        this.zoneCruche.addEventListener("drop", this.dropElt);
+        this.zoneDessin.addEventListener("drop", this.dropElt);
+        this.zoneStatuette.addEventListener("drop", this.dropElt);
 
     }
 
     endGame(win){
-        super(win);
-        this.zoneCruche.removeEventListener('dragover', allowDrop);
-        this.zoneStatuette.removeEventListener('dragover', allowDrop);
-        this.zoneDessin.removeEventListener('dragover', allowDrop);
-        this.cruche.removeEventListener('dragstart', moveElt);
-        this.statuette.removeEventListener('dragstart', moveElt);
-        this.dessin.removeEventListener('dragstart', moveElt);
-        this.zoneCruche.removeEventListener("drop", dropElt);
-        this.zoneDessin.removeEventListener("drop", dropElt);
-        this.zoneStatuette.removeEventListener("drop", dropElt);
+        super.endGame(win);
+        this.zoneCruche.removeEventListener('dragover', this.allowDrop);
+        this.zoneStatuette.removeEventListener('dragover', this.allowDrop);
+        this.zoneDessin.removeEventListener('dragover', this.allowDrop);
+        this.cruche.removeEventListener('dragstart', this.moveElt);
+        this.statuette.removeEventListener('dragstart', this.moveElt);
+        this.dessin.removeEventListener('dragstart', this.moveElt);
+        this.zoneCruche.removeEventListener("drop", this.dropElt);
+        this.zoneDessin.removeEventListener("drop", this.dropElt);
+        this.zoneStatuette.removeEventListener("drop", this.dropElt);
     }
 
-    //Allow drop on drop zones and stop event from propagating
+    /**
+     * Allows drop on drop zones and stops event from propagating
+     * @param {domEvent} e the event that triggered allowDrop
+     */
     allowDrop(e){
         e.preventDefault();
         e.stopPropagation();
     }
 
-    // Initialize movement draggable elements
+    /**
+     * Initializes movement on draggable items
+     * @param {domEvent} event the event that triggered moveElt
+     */
     moveElt(event){
         let eltId = event.target.id;
         let dt = event.dataTransfer;
@@ -215,6 +242,13 @@ class MatisseManager extends GameManager{
         dt.dropEffect = "move";
     }
 
+    /**
+     * Handles the drop of a draggable item on a dropzone
+     * If the element corresponds to the correct zone, it stays in place
+     * If not, the element is rejected from the dropzone
+     * If all elements have been dropped on the correct zones, the game is won
+     * @param {domEvent} event the event that triggered dropElt
+     */
     dropElt(event) {
         event.preventDefault();
         let zone = event.target;
@@ -230,8 +264,8 @@ class MatisseManager extends GameManager{
                 }
             }
             elt.draggable = false;
-            elt.removeEventListener("drastart", moveElt);
-            zone.removeEventListener("dragover", allowDrop);
+            elt.removeEventListener("drastart", this.moveElt);
+            zone.removeEventListener("dragover", this.allowDrop);
         }
         // If all three objects have been correctly placed, display win message
         let found = document.getElementsByClassName("elt__found").length;

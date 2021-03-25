@@ -30,7 +30,7 @@
 
             <div class="game__header">
                 <h2>L'atelier de Matisse</h2>
-                <p>Aide le peintre Matisse a ranger son atelier.</p>
+                <p>Aide le peintre Matisse à ranger son atelier avant que le temps ne soit écoulé.</p>
                 <p>Clique sur les objets, fais-les glisser et depose-les au bon endroit.</p>
             </div>
 
@@ -43,6 +43,13 @@
                     <div class="dnd__elt elt__cruche" id="cruche" draggable="true" ></div>
                     <div class="dnd__elt elt__statuette" id="statuette" draggable="true"></div>
                     <div class="dnd__elt elt__dessin" id="dessin" draggable="true"></div>
+                </div>
+
+                <div class="timer">
+                        <div class="btn__time btn" id="start">Temps</div>
+                        <div class="timer__progress-bar">
+                            <div class="timer__progress-bar--fill" id="progressbar"></div>
+                        </div>
                 </div>
         
                 <div class="btn__restart--center btn--animated btn" id="restart">Rejouer</div>
@@ -57,6 +64,7 @@
 
         
     <script src="js/common.js"></script>
+    <script src="js/GameManagers.js"></script>
     <script src="js/matisse.js"></script>
     
 </body>

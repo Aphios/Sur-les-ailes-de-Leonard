@@ -1,6 +1,8 @@
+let eden = document.getElementById("eden");
+let leonard = document.getElementById("leonard");
 
-var eden = document.getElementById("eden");
-var leonard = [document.getElementById("leonard")];
+let cachecache = new CacheCacheManager(50000, eden, 300, 100, leonard);
 
-/* TODO
-var cacheGame = new GameManager();
+let startDelay = setTimeout(function () {
+    cachecache.launch();
+}, 5000);

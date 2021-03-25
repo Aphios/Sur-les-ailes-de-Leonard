@@ -69,7 +69,7 @@
 				</fieldset>
 				<fieldset>
 					<legend>Ton message :</legend>
-					<textarea name="message" id="message" required maxlength="5000" cols="40" rows="15">Ecris ton message ici (5000 caractères max).</textarea>       
+					<textarea class="form__txtarea" name="message" id="message" required maxlength="5000" cols="40" rows="15">Ecris ton message ici (5000 caractères max).</textarea>       
 				</fieldset>
 				<input class="btn btn--animated btn__submit--center" type="submit" value="Envoyer" />
 			</form>
