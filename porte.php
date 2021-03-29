@@ -36,10 +36,12 @@ if(!isset($_SESSION["points"])){
                   echo "<p>Tu n'as pas collecté assez de points. Retourne effectuer quelques jeux et reviens ici plus tard.</p>";
                 }else{
               ?>
-              <p>Bravo ! Tu as réussi à entrer dans le monde étrange caché derrière la porte mystère !</p>
+              <p>Bravo !</p>
+              <p>Tu as réussi à entrer dans le monde étrange caché derrière la porte mystère...</p>
             </div>
               
-              <div class="game__zone game__zone--large">
+              <div class="game__zone">
+              <div class="game__illustration--top-left"><img src="imgs/porte_illustration.png" alt="Illustration représentant Léonard"></div>
                 <p>Contenu de la page à créer</p>
               </div>
               

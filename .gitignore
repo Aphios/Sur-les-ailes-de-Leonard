@@ -1,7 +1,7 @@
 #Ignore info and test files
 fiche_projet.txt
 imgs/credits.txt
-imgs/matisse.xcf
+imgs/*.xcf
 moodboard/*
 node_modules/*
 package-lock.json

@@ -11,7 +11,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Poesy</title>
+    <title>Poésy</title>
     <link rel="stylesheet" href="minigames_style.css">
     </head>
 
@@ -31,13 +31,13 @@
           <div class="game__points"><?=$_SESSION["points"]?> points</div>
 
           <div class="game__header">
-            <h2>Poesy</h2>
+            <h2>Poésy</h2>
             <p>Invente un vers de poésie et tu découvriras ensuite un curieux poème, composé rien que pour toi !</p>
           </div>
 
           <div class="game__zone">
 
-            <div class="game__illustration"><img src="imgs/poesy_illustration2.png" alt="Illustration : Léonard sur une fleur"></div>
+            <div class="game__illustration--btm-right"><img src="imgs/poesy_illustration2.png" alt="Illustration : Léonard sur une fleur"></div>
 
             <form action="poesy.php" class="game__form" method="post">
               <p><label for="strophe">Ecris ton vers ici : </label><input type="text" name="strophe" id="strophe" maxlength="200" size="50" required /></p>

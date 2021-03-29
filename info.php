@@ -28,8 +28,8 @@
                     <p>Conception et réalisation du site : Sophie Blanchard</p>
                     <p>Polices de caractères utilisées :</p>
                     <ul>
-                        <li>Macondo Swash Caps créée par John Vargas Beltran</li>
-                        <li>Josefin Sans créée par santiago Orozco</li>
+                        <li><em>Macondo Swash Caps</em> créée par John Vargas Beltran</li>
+                        <li><em>Josefin Sans</em> créée par santiago Orozco</li>
                     </ul>
                     <p>Images utilisées :</p>
                     <ul>
