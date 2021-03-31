@@ -50,7 +50,7 @@ class GameManager {
     /**
         * Sends information to server on player game points to add or deduct
         * @param {String} url destination on server
-        * @param {int} pts number of points to add or deduct
+        * @param {Number} pts number of points to add or deduct
         * @param {bool} add true for adding, false for deducting
      */
     sendPoints(pts, add) {
@@ -116,7 +116,7 @@ class MemoryManager extends GameManager{
 
     /**
      * Replaces the visible side of a card (image) by its hidden side (cover)
-     * @param {int} cacheIndex the index of the cached cards that must be switched
+     * @param {Number} cacheIndex the index of the cached cards that must be switched
      */
     hide(cacheIndex) {
         this.visiblePair[cacheIndex].parentNode.replaceChild(this.hiddenPair[cacheIndex], this.visiblePair[cacheIndex]);
@@ -128,7 +128,7 @@ class MemoryManager extends GameManager{
      * Replaces the hidden side of a card (cover) by its visible side (image)
      * hidden and visible card elements are put in a cache
      * @param {domElement} hiddenCard : the card to be flipped
-     * @param {int} cacheIndex  : the index of the cache array where the cards need to be put in
+     * @param {Number} cacheIndex  : the index of the cache array where the cards need to be put in
      */
     reveal(hiddenCard, cacheIndex) {
         for (let card of this.visibleCards) {
@@ -273,4 +273,62 @@ class MatisseManager extends GameManager{
             this.endGame(true);
         }
     }
+}
+
+class DevinetteManager extends GameManager{
+    /**
+     * @param {String} sentence sentence where a word is missing
+     * @param {String} legend description of the sentence, e.g. title, author...
+     * @param {Array} proposals array of three strings representing the potential solutions for the missing words
+     * @param {Number} solutionIndex index of the correct solution in proposals array
+     * @param {domElement} form where the game data needs to be displayed
+     */
+    constructor(duration, domGame, ptsAdd, ptsDeduct, sentence, legend, proposals, solutionIndex, form) {
+        super(duration, domGame, ptsAdd, ptsDeduct);
+        this.sentence = sentence;
+        this.legend = legend;
+        this.solutionIndex = solutionIndex;
+        this.proposals = proposals;
+        this.form = form;
+        this.checkAnswer = this.checkAnswer.bind(this);
+    }
+
+    /**
+     * Displays the enigma on the webpage
+     * @param {domElement} sentence the dom paragraph that will contain the sentence
+     * @param {domElement} legend the dom paragraph that will contain the legend
+     * @param {String} propsClass name of the dom class for proposal labels
+     */
+    display(sentence, legend, propsClass){
+        for(let i=0; i<this.proposals.length; i++){
+            this.form.getElementsByClassName(propsClass)[i].innerText = this.proposals[i];
+        }
+        sentence.innerText = this.sentence;
+        legend.innerText = this.legend;
+    }
+
+    launch(){
+        super.launch();
+        this.form.addEventListener('submit', this.checkAnswer);
+    }
+
+    endGame(win){
+        super.endGame(win);
+        this.form.removeEventListener('submit', this.checkAnswer);
+        this.form.addEventListener('submit', function(e){
+            e.preventDefault();
+        })
+    }
+
+    checkAnswer(e){
+        e.preventDefault();
+        let answer = document.querySelectorAll('input[type="radio"]:checked')[0];
+        if(answer.value == this.solutionIndex){
+            this.endGame(true);
+        }else{
+            this.endGame(false);
+        }
+
+    }
+
 }

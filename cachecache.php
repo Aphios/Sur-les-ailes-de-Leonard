@@ -30,8 +30,8 @@
 
             <div class="game__header">
                 <h2>Cache-cache</h2>
-                <p>Léonard se cache parmi les animaux de ce paysage.</p>
-                <p>Retrouve le vite et clique sur lui avant que le temps ne soit écoulé !</p>
+                <p>Léonard s'est caché dans ce tableau créé par le peintre Brueghel l'Ancien.</p>
+                <p>Retrouve-le vite et clique sur lui avant que le temps ne soit écoulé !</p>
             </div>
 
             <div class="game__zone game__zone--cc">
