@@ -13,7 +13,7 @@
         <header class="banner">
             <h1 class="banner__title"><a class="banner__link" href="index.php">Sur les ailes de Léonard</a></h1>
             <div class="banner__menu">
-              <p><a class="menu__link" href="info.php">Informations et mentions légales</a></p>
+              <p><a class="menu__link" href="infos.php">Informations et mentions légales</a></p>
               <p><a class= "menu__link" href="contact.php">Contact</a></p>
             </div>
         </header>
@@ -36,35 +36,35 @@
             </div>
             <div class="game__pres">
               <a href="matisse.php" alt="lien image vers le jeu l'atelier de Matisse">
-                <img class="game__icon" src="imgs/matisse_icon.png" alt="Icone du jeu L'atelier de Matisse">
+                <img class="game__icon" src="imgs/matisse_icon.jpg" alt="Icone du jeu L'atelier de Matisse">
               </a>
               <h3><a class="game__link" href="matisse.php" alt="lien vers le jeu l'atelier de Matisse">L'atelier de Matisse</a></h3>
               <p>Range l'atelier du peintre</p>
             </div>
             <div class="game__pres">
               <a href="poesy.php" alt="lien image vers le jeu Poesy">
-                <img class="game__icon" src="imgs/poesy_icon.png" alt="Icone du jeu Poesy">
+                <img class="game__icon" src="imgs/poesy_icon.jpg" alt="Icone du jeu Poesy">
               </a>
               <h3><a class="game__link" href="poesy.php" alt="lien vers le jeu Poesy">Poésy</a></h3>
               <p>Ecris un morceau de poème</p>
             </div>
             <div class="game__pres">
               <a href="cachecache.php" alt="lien image vers le jeu Cache-Cache">
-                <img class="game__icon" src="imgs/cachecache_icon.png" alt="">
+                <img class="game__icon" src="imgs/cachecache_icon.jpg" alt="">
               </a>
               <h3><a class="game__link" href="cachecache.php" alt="lien vers le jeu Cache-Cache">Cache-cache</a></h3>
               <p>Retrouve Léonard</p>
             </div>
             <div class="game__pres">
               <a href="porte.php" alt="lien image vers la porte mystère">
-                <img class="game__icon" src="imgs/porte_icon.png" alt="Icone de la porte mystère">
+                <img class="game__icon" src="imgs/porte_icon.jpg" alt="Icone de la porte mystère">
               </a>
               <h3><a class="game__link" href="porte.php" alt="lien vers la porte mystère">La porte mystère</a></h3>
               <p>Parviendras-tu à franchir la porte ?</p>
             </div>
             <div class="game__pres">
               <a href="motsenvoles.php" alt="lien image vers le jeu Mots Envolés">
-                <img class="game__icon" src="imgs/matisse_icon.png" alt="Icone du jeu Mots Envoles">
+                <img class="game__icon" src="imgs/mots_icon.jpg" alt="Icone du jeu Mots Envoles">
               </a>
               <h3><a class="game__link" href="motsenvoles.php" alt="lien vers le jeu Mots Envoles">Mots envolés</a></h3>
               <p>Devine les mots manquants</p>

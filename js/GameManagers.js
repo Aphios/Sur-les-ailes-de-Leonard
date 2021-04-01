@@ -124,7 +124,7 @@ class MemoryManager extends GameManager{
     /**
      * Replaces the hidden side of a card (cover) by its visible side (image)
      * hidden and visible card elements are put in a cache
-     * @param {domElement} hiddenCard : the card to be flipped
+     * @param {HTMLElement} hiddenCard : the card to be flipped
      * @param {Number} cacheIndex  : the index of the cache array where the cards need to be put in
      */
     reveal(hiddenCard, cacheIndex) {
@@ -272,13 +272,13 @@ class MatisseManager extends GameManager{
     }
 }
 
-class DevinetteManager extends GameManager{
+class MotsEnvolesManager extends GameManager{
     /**
      * @param {String} sentence sentence where a word is missing
      * @param {String} legend description of the sentence, e.g. title, author...
      * @param {Array} proposals array of three strings representing the potential solutions for the missing words
      * @param {Number} solutionIndex index of the correct solution in proposals array
-     * @param {domElement} form where the game data needs to be displayed
+     * @param {HTMLElement} form where the game data needs to be displayed
      */
     constructor(duration, domGame, ptsAdd, ptsDeduct, sentence, legend, proposals, solutionIndex) {
         super(duration, domGame, ptsAdd, ptsDeduct);
@@ -286,19 +286,18 @@ class DevinetteManager extends GameManager{
         this.legend = legend;
         this.solutionIndex = solutionIndex;
         this.proposals = proposals;
-        this.form = domGame;
         this.checkAnswer = this.checkAnswer.bind(this);
     }
 
     /**
      * Displays the enigma on the webpage
-     * @param {domElement} sentence the dom paragraph that will contain the sentence
-     * @param {domElement} legend the dom paragraph that will contain the legend
+     * @param {HTMLElement} sentence the dom paragraph that will contain the sentence
+     * @param {HTMLElement} legend the dom paragraph that will contain the legend
      * @param {String} propsClass name of the dom class for proposal labels
      */
     display(sentence, legend, propsClass){
         for(let i=0; i<this.proposals.length; i++){
-            this.form.getElementsByClassName(propsClass)[i].innerText = this.proposals[i];
+            this.domGame.getElementsByClassName(propsClass)[i].innerText = this.proposals[i];
         }
         sentence.innerText = this.sentence;
         legend.innerText = this.legend;
@@ -306,13 +305,13 @@ class DevinetteManager extends GameManager{
 
     launch(){
         super.launch();
-        this.form.addEventListener('submit', this.checkAnswer);
+        this.domGame.addEventListener('submit', this.checkAnswer);
     }
 
     endGame(win){
         super.endGame(win);
-        this.form.removeEventListener('submit', this.checkAnswer);
-        this.form.addEventListener('submit', function(e){
+        this.domGame.removeEventListener('submit', this.checkAnswer);
+        this.domGame.addEventListener('submit', function(e){
             e.preventDefault();
         })
     }

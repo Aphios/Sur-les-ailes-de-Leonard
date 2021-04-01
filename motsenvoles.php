@@ -21,7 +21,7 @@
         <header class="banner">
             <h1><a class="banner__link" href="index.php">Sur les ailes de Léonard</a></h1>
             <div class="banner__menu">
-              <p><a class="menu__link" href="info.php">Informations et mentions légales</a></p>
+              <p><a class="menu__link" href="infos.php">Informations et mentions légales</a></p>
               <p><a class= "menu__link" href="contact.php">Contact</a></p>
             </div>
         </header>
@@ -44,7 +44,7 @@
             <div class="game__centered">
 
               <p id="vers"></p>
-              <p id="legende" class="citation"></p>
+              <p id="legende" class="quote"></p>
               <p>&nbsp</p>
               <p>Quel est le mot qui s'est envolé ?</p>
               <form method="post" action="motsenvoles.php" id="form-propositions">
