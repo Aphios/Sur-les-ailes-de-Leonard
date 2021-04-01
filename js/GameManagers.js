@@ -19,12 +19,9 @@ class GameManager {
      */
     launch() {
         this.restartBtn.addEventListener("click", function () {
-            window.location.reload();
+            window.location = location.href;
         });
         this.progressbar.style.transform = "scaleX(1)";
-        /*this.timeOut = setTimeout(function () {
-            this.endGame(false);
-        }, this.duration);*/
         this.timeOut = setTimeout( () => { 
             this.endGame(false); 
         }, this.duration);
@@ -283,13 +280,13 @@ class DevinetteManager extends GameManager{
      * @param {Number} solutionIndex index of the correct solution in proposals array
      * @param {domElement} form where the game data needs to be displayed
      */
-    constructor(duration, domGame, ptsAdd, ptsDeduct, sentence, legend, proposals, solutionIndex, form) {
+    constructor(duration, domGame, ptsAdd, ptsDeduct, sentence, legend, proposals, solutionIndex) {
         super(duration, domGame, ptsAdd, ptsDeduct);
         this.sentence = sentence;
         this.legend = legend;
         this.solutionIndex = solutionIndex;
         this.proposals = proposals;
-        this.form = form;
+        this.form = domGame;
         this.checkAnswer = this.checkAnswer.bind(this);
     }
 

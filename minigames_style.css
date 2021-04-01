@@ -252,6 +252,9 @@ li {
 .game__form--center {
   margin: auto;
 }
+.game__centered {
+  padding-left: 15px;
+}
 
 .form__txtarea {
   font-family: "Josefin Sans", sans-serif;
@@ -307,6 +310,9 @@ li {
     width: 260px;
   }
 }
+.timer__progress-bar--fill-mini {
+  transition: transform 25s linear;
+}
 
 .btn {
   font-size: 1.1rem;
@@ -359,6 +365,11 @@ li {
   .popup-msg {
     font-size: 1.5rem;
   }
+}
+
+.citation {
+  font-size: 0.8rem;
+  font-style: italic;
 }
 
 .game__dnd {
@@ -672,10 +683,10 @@ li {
   }
 }
 
-.game__illustration--top-left {
+.game__illustration--center-right {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  right: 30px;
+  bottom: 120px;
 }
 
 /*# sourceMappingURL=minigames_style.css.map */

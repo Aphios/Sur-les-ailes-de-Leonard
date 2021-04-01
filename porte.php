@@ -41,7 +41,7 @@ if(!isset($_SESSION["points"])){
             </div>
               
               <div class="game__zone">
-              <div class="game__illustration--top-left"><img src="imgs/porte_illustration.png" alt="Illustration représentant Léonard"></div>
+              <div class="game__illustration--btm-right"><img src="imgs/porte_illustration.png" alt="Illustration représentant Léonard"></div>
                 <p>Contenu de la page à créer</p>
               </div>
               

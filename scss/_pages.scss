@@ -114,13 +114,12 @@
     }
 }
 
-// Porte
-
+// Mots envolés
 .game{
-    &__illustration--top-left{
+    &__illustration--center-right{
         position: absolute;
-        top: 20px;
-        left: 20px;
+        right:30px;
+        bottom: 120px;
     }
 }
 

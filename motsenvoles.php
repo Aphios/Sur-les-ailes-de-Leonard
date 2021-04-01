@@ -39,22 +39,27 @@
 
           <div class="game__zone" id="devinette">
 
-            <div class="game__illustration--top-left"><img src="imgs/porte_illustration.png" alt="Illustration représentant Léonard portant un mot sur ses ailes"></div>
-            <p id="vers"></p>
-            <p id="legende" class="citation"></p>
-            <p>&nbsp</p>
-            <p>Quel est le mot qui s'est envolé ?</p>
-            <form method="post" action="motsenvoles.php" id="form-propositions">
-                <input type="radio" name="proposition" value="0" id="prop0" /> <label for="prop1" class="labelprop"></label><br />
-                <input type="radio" name="proposition" value="1" id="prop1" /> <label for="prop2" class="labelprop"></label><br />
-                <input type="radio" name="proposition" value="2" id="prop2" /> <label for="prop3" class="labelprop"></label><br />
-                <input type="submit" value="Choisir">
-            </form>
+            <div class="game__illustration--center-right"><img src="imgs/mots_illustration.png" alt="Illustration représentant Léonard portant un mot sur ses ailes"></div>
+            
+            <div class="game__centered">
+
+              <p id="vers"></p>
+              <p id="legende" class="citation"></p>
+              <p>&nbsp</p>
+              <p>Quel est le mot qui s'est envolé ?</p>
+              <form method="post" action="motsenvoles.php" id="form-propositions">
+                  <input type="radio" name="proposition" value="0" id="prop0" /> <label for="prop1" class="labelprop"></label><br />
+                  <input type="radio" name="proposition" value="1" id="prop1" /> <label for="prop2" class="labelprop"></label><br />
+                  <input type="radio" name="proposition" value="2" id="prop2" /> <label for="prop3" class="labelprop"></label><br />
+                  <input type="submit" class="btn btn--animated btn__submit" value="Choisir">
+              </form>
+
+            </div>
 
             <div class="timer">
                 <div class="btn__time btn" id="start">Temps</div>
                 <div class="timer__progress-bar">
-                    <div class="timer__progress-bar--fill" id="progressbar"></div>
+                    <div class="timer__progress-bar--fill timer__progress-bar--fill-mini" id="progressbar"></div>
                 </div>
             </div>
         
