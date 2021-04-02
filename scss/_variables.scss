@@ -20,15 +20,15 @@ $drag-elts: (
 $drag-zones: (statuette: (left:54px, top:159px, width:75px, height:137px), dessin: (left:175px, top:162px, width:75px, height:105px), cruche:(left:456px, top:395px, width:51px, height:61px));
 
 $drag-elts-med: (cruche:(left: 100px, top: 315px, background-image: url("imgs/cruche_med.png"), background-repeat: no-repeat, background-position: center, width: 26px, height: 28px), 
-    dessin:(left: 235px, top: 330px, background-image: url("imgs/dessin_med.png"), background-repeat: no-repeat, background-position: center, width: 38px, height: 50px), 
-    statuette:(left: 300px, top: 300px, background-image: url("imgs/statuette_med.png"), background-repeat: no-repeat, background-position: center, width: 50px, height: 82px)
+    dessin:(left: 235px, top: 330px, background-image: url("imgs/dessin_med.gif"), background-repeat: no-repeat, background-position: center, width: 38px, height: 50px), 
+    statuette:(left: 300px, top: 300px, background-image: url("imgs/statuette_med.gif"), background-repeat: no-repeat, background-position: center, width: 50px, height: 82px)
     );
 
 $drag-zones-med:(cruche:(left: 254px, top: 228px, width: 23px, height: 25px), dessin: (left: 102px, top: 94px, width: 39px, height: 48px), statuette:(left: 28px, top: 89px, width: 46px, height: 79px));
 
 $drag-elts-sm: (cruche: (left: 70px, top: 225px, background-image: url("imgs/cruche_sm.png"), background-repeat: no-repeat, background-position: center, width: 18px, height: 20px),
-    dessin:(left: 165px, top: 220px, background-image: url("imgs/dessin_sm.png"), background-repeat: no-repeat, background-position: center, width: 27px, height: 35px),
-    statuette: (left: 205px, top: 210px, background-image: url("imgs/statuette_sm.png"), background-repeat: no-repeat, background-position: center, width: 35px, height: 57px)
+    dessin:(left: 165px, top: 220px, background-image: url("imgs/dessin_sm.gif"), background-repeat: no-repeat, background-position: center, width: 27px, height: 35px),
+    statuette: (left: 205px, top: 210px, background-image: url("imgs/statuette_sm.gif"), background-repeat: no-repeat, background-position: center, width: 35px, height: 57px)
     );
 
 $drag-zones-sm: (cruche:(left: 179px, top: 158px, width: 15px, height: 28px), dessin:(left: 72px, top: 63px, width: 25px, height: 36px), statuette:(left: 19px, top: 61px, width: 30px, height: 55px));
