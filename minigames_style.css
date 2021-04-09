@@ -17,6 +17,7 @@ html {
 
 body {
   margin: 0;
+  background: #3273f1;
 }
 
 .page {
@@ -26,7 +27,6 @@ body {
   margin: 0 auto;
   padding-bottom: 1.2rem;
   height: auto;
-  background: #3273f1;
 }
 
 h1 {
@@ -85,6 +85,17 @@ li {
     flex-direction: column;
     align-items: center;
   }
+}
+.banner.banner--slide {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0;
+  z-index: 100;
+  transition: opacity 0.5s ease-in-out;
+}
+.banner.banner--slide:hover {
+  opacity: 1;
 }
 .banner__link {
   font-family: "Macondo Swash Caps", cursive;
@@ -260,6 +271,25 @@ li {
   font-family: "Josefin Sans", sans-serif;
   font-size: 0.8rem;
   color: #383a3d;
+}
+
+.central {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+@media (max-width: 500px) {
+  .central {
+    text-align: left;
+  }
+}
+.central.central--mid {
+  width: 70%;
+  margin: auto;
+}
+@media (max-width: 500px) {
+  .central.central--mid {
+    margin: 0;
+  }
 }
 
 .card {

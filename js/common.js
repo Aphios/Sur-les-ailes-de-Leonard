@@ -1,7 +1,9 @@
 // Common DOM Elements
-var page = document.getElementById("page");
+
+let page = document.getElementById("page");
 
 // Common functions
+
 function shuffleArray(array) {
     let curId = array.length;
     while (curId !== 0) {
@@ -96,3 +98,6 @@ function resizeImg(img, maxWidth, maxHeight){
     img.height = height;
     img.src = canvas.toDataURL();
 }
+
+// Hide and show menu
+

@@ -1,8 +1,19 @@
 <?php
 session_start();
+require 'Article.php';
 if(!isset($_SESSION["points"])){
   $_SESSION["points"] = 0;           
 }
+/*
+TODO compléter en ajoutant des articles (textes et images à créer)
+les ajouter dans l'array articles
+*/
+$articles = [];
+$article1 = new Article('imgs/ferroniere_repro.jpg', 'central card', 'articles/ferroniere.txt', 'central central--mid', 'Reproduction style cartoon de la belle Ferroniere');
+$article2 = new Article('imgs/ours_repro.png', 'central card', 'articles/ours.txt', 'central central --mid', "Reproduction style néon d'un dessin d'ours");
+array_push($articles, $article1, $article2);
+shuffle($articles);
+$currentArticle = $articles[0];
 ?>
 
 <html lang="fr">
@@ -16,7 +27,7 @@ if(!isset($_SESSION["points"])){
     <body>
       <div class="page" id="page">
 
-      <header class="banner">
+      <header class="banner banner--slide">
             <h1><a class="banner__link" href="index.php">Sur les ailes de Léonard</a></h1>
             <div class="banner__menu">
               <p><a class="menu__link" href="infos.php">Informations et mentions légales</a></p>
@@ -41,8 +52,10 @@ if(!isset($_SESSION["points"])){
             </div>
               
               <div class="game__zone">
-              <div class="game__illustration--btm-right"><img src="imgs/porte_illustration.png" alt="Illustration représentant Léonard"></div>
-                <p>Contenu de la page à créer</p>
+                <div class="game__illustration--btm-right"><img src="imgs/porte_illustration.png" alt="Illustration représentant Léonard"></div>
+                <div class="game__centered" id="article-container">
+                  <?php $currentArticle->displayArticle(); ?>
+                </div>
               </div>
               
             <?php

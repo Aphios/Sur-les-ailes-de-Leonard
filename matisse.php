@@ -16,7 +16,7 @@
 <body>
     <div class="page" id="page">
 
-        <header class="banner">
+        <header class="banner banner--slide">
             <h1><a class="banner__link" href="index.php">Sur les ailes de Léonard</a></h1>
             <div class="banner__menu">
               <p><a class="menu__link" href="infos.php">Informations et mentions légales</a></p>

@@ -10,7 +10,7 @@
     <body>
       <div class="page" id="page">
 
-        <header class="banner">
+        <header class="banner" id="leo-navbar">
             <h1 class="banner__title"><a class="banner__link" href="index.php">Sur les ailes de Léonard</a></h1>
             <div class="banner__menu">
               <p><a class="menu__link" href="infos.php">Informations et mentions légales</a></p>
@@ -72,6 +72,8 @@
           </div>
         </div>
     </div>
+
+    <script src="js/common.js"></script>
     </body>
 
 </html>

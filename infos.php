@@ -37,7 +37,7 @@
                         <li>Page "L'atelier de Matisse" : Henri Matisse, <em>L'atelier rose</em>, 1911,  musée des beaux-arts Pouchkine, Moscou</li>
                         <li>Page "Poésy" : la fleur est extraite de l'oeuvre <em>Magnolia</em>, artiste inconnu, après Wen Zhengming, Magnolia, vers 1549, Metropolitan Museum, New York </li>
                         <li>Page "Cache-cache" : Jan Brueghel l'ancien, <em>Le jardin d'Eden</em>, 1613, National Gallery, Londres</li>
-                        <li>Page "La Porte Mystère" : René Magritte, <em>Poison, variation sur la Victoire</em>, 1939</li>s
+                        <li>Page "La Porte Mystère" : René Magritte, <em>Poison, variation sur la Victoire</em>, 1939, Léonard de Vinci, <em>Autoportrait</em>, vers 1512, Bibliothèque Reale, Turin, <em>La Belle Ferronière</em>, vers 1490, Musée du Louvre, Paris, Etudes d'ours marchant, vers 1483-1485, Metropolitan Museum, New York</li>
                     </ul>
                     <h3>Mentions légales</h3>
                     <p>Ce site est édité par Sophie Blanchard.</p>

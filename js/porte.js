@@ -1,28 +1,27 @@
 /* TODO :
-Est-ce que je veux vraiment faire appel à l'API du Rijks ?
-Car le titre sera en anglais :/
-Sinon, ce code n'est pas nécessaire
-SI oui, il faut vérifier la taille du browser,
-resizer l'image selon cette taille
-+ ajouter un event listener au cas où la fenêtre soit redimensionnée
-
+On récupère l'élément d'id porte-img
+Au clic, on change la source
 */
 
-/*let url = "https://www.rijksmuseum.nl/api/en/collection?key=QhuX4FUw&ps=1&imgonly=true&p=" + randomInt(100);
-var title = "";
-fetchDataImgs(url)
-.then(function(artData){
-    title = artData.longTitle;
-    return loadImg(artData, "Oeuvre d'art : ");
-}).then(function(img){
-    img.className = "game__img";
-    // if browser resolution :
-    if(img.width<900){
-        resizeImg(img, 900, 900);
+let artwork = document.getElementById('img-article');
+let imgNamePattern = /^(.*\/)(\w*)(_repro)(\.[pngjpife]{1,4})$/;
+let reproSrc = '';
+let originalSrc = '';
 
+artwork.addEventListener('click', function(){
+    // If images have already been switched at least once
+    if(reproSrc != '' && originalSrc != ''){
+        if(this.src === reproSrc){
+            artwork.src = originalSrc;
+        }else if(this.src === originalSrc){
+            artwork.src = reproSrc;
+        }
+    // If user switches the images for the first time
+    }else{
+        reproSrc = this.src;
+        // We look for the name of the original image, e.g. "thing_repro" => "thing"
+        let imgName = reproSrc.match(imgNamePattern)[2];
+        originalSrc = reproSrc.replace(imgNamePattern, '$1$2$4');
+        artwork.src = originalSrc;
     }
-    
-    document.getElementById("").appendChild(img);
-    document.getElementById("").appendChild(document.createTextNode(title));
-});
-*/
+})
