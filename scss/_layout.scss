@@ -17,6 +17,25 @@ body{
     //background: radial-gradient(circle, rgba(59,118,196,1) 0%, rgba(105,141,190,1) 100%);
 }
 
+.ill_right, .ill_left{
+    position: fixed;
+    z-index: -1;
+    top :0;
+    width: 139px;
+    min-height: 900px;
+}
+
+.ill_right{
+    right: 0;
+    background-image: url('imgs/ailesd.png');
+    
+}
+
+.ill_left{
+    left: 0;
+    background-image: url('imgs/ailesg.png');
+}
+
 h1{
     font-size: 1.8rem;
     font-family: $title-font;

@@ -12,7 +12,9 @@
 
     <body>
       <div class="page" id="page">
-
+	  	<div class="ill_right"></div>
+        <div class="ill_left"></div>
+		
 	  	<header class="banner">
             <h1><a class="banner__link" href="index.php">Sur les ailes de Léonard</a></h1>
             <div class="banner__menu">

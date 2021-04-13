@@ -27,7 +27,10 @@ $currentArticle = $articles[0];
     <body>
       <div class="page" id="page">
 
-      <header class="banner banner--slide">
+        <div class="ill_right"></div>
+        <div class="ill_left"></div>
+
+        <header class="banner banner--slide">
             <h1><a class="banner__link" href="index.php">Sur les ailes de Léonard</a></h1>
             <div class="banner__menu">
               <p><a class="menu__link" href="infos.php">Informations et mentions légales</a></p>

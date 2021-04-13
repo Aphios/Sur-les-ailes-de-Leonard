@@ -13,8 +13,12 @@
     <link rel="stylesheet" href="minigames_style.css">
     <title>Memory</title>
 </head>
+
 <body>
     <div class="page" id="page">
+        
+        <div class="ill_right"></div>
+        <div class="ill_left"></div>
 
         <header class="banner banner--slide">
             <h1><a class="banner__link" href="index.php">Sur les ailes de Léonard</a></h1>

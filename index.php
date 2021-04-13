@@ -10,6 +10,9 @@
     <body>
       <div class="page" id="page">
 
+        <div class="ill_right"></div>
+        <div class="ill_left"></div>
+
         <header class="banner" id="leo-navbar">
             <h1 class="banner__title"><a class="banner__link" href="index.php">Sur les ailes de Léonard</a></h1>
             <div class="banner__menu">
@@ -22,7 +25,7 @@
 
           <div class="game__header">
             <h2>Bienvenue !</h2>
-            <p>Pars à la découverte de fabuleuses d'oeuvres d'art et découvre le plaisir des mots en voyageant sur les ailes de Léonard, le papillon aventurier !</p>
+            <p>Pars à la découverte de fabuleuses oeuvres d'art et découvre le plaisir des mots en voyageant sur les ailes de Léonard, le papillon aventurier !</p>
             <p>Choisis un jeu à effectuer avec lui.</p>
           </div>
 
