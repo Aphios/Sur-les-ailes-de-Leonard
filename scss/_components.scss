@@ -102,3 +102,22 @@
     font-style: italic;
 }
 
+.logo{
+    width: 46px;
+    height: 50px;
+    position: relative;
+    left: -47px;
+    top : 12px;
+    transition: transform 0.4s ease-in-out;
+    transform-origin: bottom;
+    &:hover{
+        transform: skew(10deg, -10deg) translate(-10%);
+    }
+    @media(max-width :750px){
+        left: -43px;
+    }
+    @media(max-width: 400px){
+        left: -38px;
+        top: 6px;
+    }
+}

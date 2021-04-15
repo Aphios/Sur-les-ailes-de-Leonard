@@ -13,10 +13,13 @@
             <div class="ill_left"></div>
 
             <header class="banner">
-                <h1><a class="banner__link" href="index.php">Sur les ailes de Léonard</a></h1>
+                <div class="banner__head">
+                    <h1 class="banner__title"><a class="banner__link" href="index.php">Sur les ailes de Léonard</a></h1>
+                    <img class="logo" src="imgs/logo.png" alt="Logo Léonard">
+                </div>
                 <div class="banner__menu">
-                <p><a class="menu__link" href="infos.php">Informations et mentions légales</a></p>
-                <p><a class= "menu__link" href="contact.php">Contact</a></p>
+                    <p><a class="menu__link" href="infos.php">Informations et mentions légales</a></p>
+                    <p><a class= "menu__link" href="contact.php">Contact</a></p>
                 </div>
             </header>
 

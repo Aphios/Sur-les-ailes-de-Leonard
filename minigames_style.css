@@ -98,7 +98,7 @@ li {
   justify-content: space-between;
   align-items: baseline;
 }
-@media (max-width: 820px) {
+@media (max-width: 865px) {
   .banner {
     flex-direction: column;
     align-items: center;
@@ -114,6 +114,14 @@ li {
 }
 .banner.banner--slide:hover {
   opacity: 1;
+}
+.banner__title {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+.banner__head {
+  display: flex;
+  position: relative;
 }
 .banner__link {
   font-family: "Macondo Swash Caps", cursive;
@@ -418,6 +426,30 @@ li {
 .quote {
   font-size: 0.8rem;
   font-style: italic;
+}
+
+.logo {
+  width: 46px;
+  height: 50px;
+  position: relative;
+  left: -47px;
+  top: 12px;
+  transition: transform 0.4s ease-in-out;
+  transform-origin: bottom;
+}
+.logo:hover {
+  transform: skew(10deg, -10deg) translate(-10%);
+}
+@media (max-width: 750px) {
+  .logo {
+    left: -43px;
+  }
+}
+@media (max-width: 400px) {
+  .logo {
+    left: -38px;
+    top: 6px;
+  }
 }
 
 .game__dnd {

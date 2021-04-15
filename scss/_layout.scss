@@ -84,7 +84,7 @@ li{
     display:flex;
     justify-content: space-between;
     align-items: baseline;
-    @media (max-width: 820px){
+    @media (max-width: 865px){
         flex-direction: column;
         align-items: center;
     }
@@ -99,6 +99,15 @@ li{
             opacity: 1;
         }
     }
+    &__title{
+        margin-top:1.5em;
+        margin-bottom: 0.5em;
+    }
+    &__head{
+        display: flex;
+        position: relative;
+    }
+    
     &__link{
         font-family: $title-font;
         color: $col-primary;
