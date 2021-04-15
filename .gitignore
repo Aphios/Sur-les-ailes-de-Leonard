@@ -1,5 +1,5 @@
 #Ignore info and test files
-fiche_projet.txt
+docs/fiche_projet.txt
 imgs/credits.txt
 imgs/compositions/*
 imgs/*.xcf

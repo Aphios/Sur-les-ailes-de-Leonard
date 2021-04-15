@@ -69,7 +69,7 @@
 
     </div>
 
-        
+    <script src="js/dragdroptouch.js"></script>
     <script src="js/common.js"></script>
     <script src="js/notouch.js"></script>
     <script src="js/GameManagers.js"></script>

@@ -1,0 +1,2 @@
+Drag and drop polyfill de Bernardo Castillho :
+https://github.com/Bernardo-Castilho/dragdroptouch
