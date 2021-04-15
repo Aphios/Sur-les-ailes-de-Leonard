@@ -1,9 +1,5 @@
-/* TODO :
-On récupère l'élément d'id porte-img
-Au clic, on change la source
-*/
 
-let artwork = document.getElementById('img-article');
+let artwork = document.getElementById('img-double');
 let imgNamePattern = /^(.*\/)(\w*)(_repro)(\.[pngjpife]{1,4})$/;
 let reproSrc = '';
 let originalSrc = '';

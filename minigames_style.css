@@ -104,7 +104,7 @@ li {
     align-items: center;
   }
 }
-.banner.banner--slide {
+.banner.banner--slide.no__touch {
   position: fixed;
   top: 0;
   width: 100%;
@@ -112,7 +112,7 @@ li {
   z-index: 100;
   transition: opacity 0.5s ease-in-out;
 }
-.banner.banner--slide:hover {
+.banner.banner--slide.no__touch:hover {
   opacity: 1;
 }
 .banner__title {

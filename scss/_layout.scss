@@ -88,7 +88,7 @@ li{
         flex-direction: column;
         align-items: center;
     }
-    &.banner--slide{
+    &.banner--slide.no__touch{
         position: fixed;
         top: 0;
         width: 100%;
@@ -97,6 +97,7 @@ li{
         transition: opacity 0.5s ease-in-out;
         &:hover{
             opacity: 1;
+     
         }
     }
     &__title{

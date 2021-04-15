@@ -99,5 +99,3 @@ function resizeImg(img, maxWidth, maxHeight){
     img.src = canvas.toDataURL();
 }
 
-// Hide and show menu
-

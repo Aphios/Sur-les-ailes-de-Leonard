@@ -20,7 +20,7 @@
         <div class="ill_right"></div>
         <div class="ill_left"></div>
 
-        <header class="banner banner--slide">
+        <header class="banner banner--slide" id="banner">
             <div class="banner__head">
                 <h1 class="banner__title"><a class="banner__link" href="index.php">Sur les ailes de Léonard</a></h1>
                 <img class="logo" src="imgs/logo.png" alt="Logo Léonard">
@@ -71,6 +71,7 @@
 
         
     <script src="js/common.js"></script>
+    <script src="js/notouch.js"></script>
     <script src="js/GameManagers.js"></script>
     <script src="js/matisse.js"></script>
     

@@ -4,14 +4,15 @@ require 'Article.php';
 if(!isset($_SESSION["points"])){
   $_SESSION["points"] = 0;           
 }
-/*
-TODO compléter en ajoutant des articles (textes et images à créer)
-les ajouter dans l'array articles
-*/
+
 $articles = [];
-$article1 = new Article('imgs/ferroniere_repro.jpg', 'central card', 'articles/ferroniere.txt', 'central central--mid', 'Reproduction style cartoon de la belle Ferroniere');
-$article2 = new Article('imgs/ours_repro.png', 'central card', 'articles/ours.txt', 'central central --mid', "Reproduction style néon d'un dessin d'ours");
-array_push($articles, $article1, $article2);
+$article1 = new Article('imgs/ferroniere_repro.jpg', 'central card', 'articles/ferroniere.txt', 'central central--mid', 'Reproduction style cartoon de la belle Ferroniere', 'img-double');
+$article2 = new Article('imgs/ours_repro.png', 'central card', 'articles/ours.txt', 'central central --mid', "Reproduction style néon d'un dessin d'ours", 'img-double');
+$article3 = new Article('imgs/autoportrait.jpg', 'central card', 'articles/amour.txt', 'central central--mid', "Autoportrait de Léonard de Vinci");
+$article4 = new Article('imgs/autoportrait.jpg', 'central card', 'articles/savoir.txt', 'central central--mid', "Autoportrait de Léonard de Vinci");
+$article5 = new Article('imgs/autoportrait.jpg', 'central card', 'articles/eau_feu.txt', 'central central--mid', "Autoportrait de Léonard de Vinci");
+
+array_push($articles, $article1, $article2, $article3, $article4, $article5);
 shuffle($articles);
 $currentArticle = $articles[0];
 ?>
@@ -30,7 +31,7 @@ $currentArticle = $articles[0];
         <div class="ill_right"></div>
         <div class="ill_left"></div>
 
-        <header class="banner banner--slide">
+        <header class="banner banner--slide" id="banner">
             <div class="banner__head">
               <h1 class="banner__title"><a class="banner__link" href="index.php">Sur les ailes de Léonard</a></h1>
               <img class="logo" src="imgs/logo.png" alt="Logo Léonard">
@@ -54,7 +55,8 @@ $currentArticle = $articles[0];
                 }else{
               ?>
               <p>Bravo !</p>
-              <p>Tu as réussi à entrer dans le monde étrange caché derrière la porte mystère...</p>
+              <p>Tu as réussi à entrer dans la bibliothèque de Léonard.</p>
+              <p>Tu vas pouvoir découvrir des anecdotes amusantes sur Léonard de Vinci, le peintre qui porte le même nom que Léonard.</p>
             </div>
               
               <div class="game__zone">
@@ -71,6 +73,7 @@ $currentArticle = $articles[0];
         </div>
 
     <script src="js/common.js"></script>
+    <script src="js/notouch.js"></script>
     <script src="js/porte.js"></script>
 
     </body>
