@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Informations et mentions légales</title>
-    <link rel="stylesheet" href="minigames_style.css">
+    <link rel="stylesheet" href="css/style.css">
     </head>
 
     <body>
@@ -58,7 +58,7 @@
                     sont dispensés de déclaration (dispense n°7).</p>
                     <p>Conformément à la Loi n° 78-17 du 6 janvier 1978 (art. 34) relative à "l'informatique, aux fichiers et 
                     aux libertés", vous disposez d'un droit d'accès, de modification, de rectification et de suppression des informations vous concernant. Vous pouvez exercer ces droits, s'agissant des données personnelles vous concernant,
-                    en adressant un email à : aphios.web@gmail.com</p>
+                    en adressant un email à : contact@sur-les-ailes-de-leonard.fr</p>
 
                 </div>
             </div>        

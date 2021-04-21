@@ -1,5 +1,6 @@
 // **** VARIABLES ****
 
+let loader = document.getElementById("loader"); // Loader displaying before game starts
 let codeIndex = 0;
 let cardCodes = ["a", "b", "c", "d", "e", "f", "g", "h"];
 let hiddenCards = document.getElementsByClassName("game__grid-card");
@@ -40,6 +41,9 @@ fetchData(url)
             visibleCards[i].dataset.index = i + 1;
         }
         // Start game
+        if(loader.parentNode){
+            loader.parentNode.removeChild(loader);
+        }
         memo.launch();
     }).catch(function (err) {
         console.error(err);

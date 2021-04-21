@@ -10,11 +10,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="minigames_style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Memory</title>
 </head>
 
 <body>
+
+    <div class="loader" id="loader">
+        <div class="loader__icon"></div>
+    </div>
+
     <div class="page" id="page">
         
         <div class="ill_right"></div>
@@ -42,6 +47,7 @@
             <div class="game__zone">
 
                 <div class="game__grid game__grid--memory"  id="memory">
+
                     <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="1">
                     <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="2">
                     <img class="game__grid-card card" src="imgs/default.png" alt="memory card" data-index="3">

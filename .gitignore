@@ -1,8 +1,7 @@
 #Ignore info and test files
 docs/fiche_projet.txt
-imgs/credits.txt
 imgs/compositions/*
-imgs/*.xcf
+imgs/transparents/*
 moodboard/*
 node_modules/*
 package-lock.json

@@ -7,12 +7,12 @@
     &__dnd{
         margin: 0.4rem auto;
         position: relative;
-        @include img_bg(894px, 731px, "imgs/matisse.jpg");
+        @include img_bg(894px, 731px, "../imgs/matisse.jpg");
         @media (max-width: 1100px){
-            @include img_bg(500px, 409px, "imgs/matisse_med.jpg");
+            @include img_bg(500px, 409px, "../imgs/matisse_med.jpg");
         }
         @media (max-width: 650px){
-            @include img_bg(350px, 286px, "imgs/matisse_sm.jpg");
+            @include img_bg(350px, 286px, "../imgs/matisse_sm.jpg");
         }
     }
     &__zone--matisse{
@@ -67,15 +67,15 @@
     &__clic{
         position: relative;
         margin: 0.4rem auto;
-        @include img_bg(890px, 580px, "imgs/eden.jpg");
+        @include img_bg(890px, 580px, "../imgs/eden.jpg");
         @media (max-width:1150px){
-            @include img_bg(600px, 391px, "imgs/eden_med.jpg");
+            @include img_bg(600px, 391px, "../imgs/eden_med.jpg");
         }
         @media (max-width: 790px){
-            @include img_bg(400px, 261px, "imgs/eden_sm.jpg");
+            @include img_bg(400px, 261px, "../imgs/eden_sm.jpg");
         }
         @media (max-width: 550px){
-            @include img_bg(350px, 479px, "imgs/eden_tiny.jpg");
+            @include img_bg(350px, 479px, "../imgs/eden_tiny.jpg");
         }
 
     }

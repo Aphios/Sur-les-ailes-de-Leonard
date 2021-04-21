@@ -52,7 +52,7 @@ class GameManager {
      */
     sendPoints(pts, add) {
         let request = new XMLHttpRequest();
-        request.open("POST", "http://localhost/Projets_sass/sur-les-ailes-de-leonard/ajax_pts.php");
+        request.open("POST", "https://sur-les-ailes-de-leonard.fr/php_components/ajax_pts.php");
         request.setRequestHeader("X-Requested-With", "xmlhttprequest");
         request.addEventListener("load", function () {
             console.log(request.responseText);
@@ -234,7 +234,7 @@ class MatisseManager extends GameManager{
     moveElt(event){
         let eltId = event.target.id;
         let dt = event.dataTransfer;
-        dt.setData("text/uri-list", "./imgs/" + eltId + ".png");
+        dt.setData("text/uri-list", "../imgs/" + eltId + ".png");
         dt.setData("text/plain", eltId);
         dt.dropEffect = "move";
     }

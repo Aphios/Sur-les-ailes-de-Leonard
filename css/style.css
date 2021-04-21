@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@0;1&family=Macondo+Swash+Caps&display=swap");
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 html {
   box-sizing: border-box;
   font-size: 18px;
@@ -39,12 +47,12 @@ body {
 
 .ill_right {
   right: 0;
-  background-image: url("imgs/ailesd.png");
+  background-image: url("../imgs/ailesd.png");
 }
 
 .ill_left {
   left: 0;
-  background-image: url("imgs/ailesg.png");
+  background-image: url("../imgs/ailesg.png");
 }
 
 h1 {
@@ -452,25 +460,54 @@ li {
   }
 }
 
+.loader {
+  width: 150%;
+  height: 150%;
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  z-index: 200;
+  top: -20%;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.loader__icon {
+  border: 12px solid rgba(172, 0, 74, 0.5);
+  border-top: 12px solid #ac004a;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  z-index: 300;
+}
+@media (max-width: 500px) {
+  .loader__icon {
+    left: 20%;
+  }
+}
+
 .game__dnd {
   margin: 0.4rem auto;
   position: relative;
   width: 894px;
   height: 731px;
-  background: url("imgs/matisse.jpg") no-repeat center;
+  background: url("../imgs/matisse.jpg") no-repeat center;
 }
 @media (max-width: 1100px) {
   .game__dnd {
     width: 500px;
     height: 409px;
-    background: url("imgs/matisse_med.jpg") no-repeat center;
+    background: url("../imgs/matisse_med.jpg") no-repeat center;
   }
 }
 @media (max-width: 650px) {
   .game__dnd {
     width: 350px;
     height: 286px;
-    background: url("imgs/matisse_sm.jpg") no-repeat center;
+    background: url("../imgs/matisse_sm.jpg") no-repeat center;
   }
 }
 .game__zone--matisse {
@@ -499,7 +536,7 @@ li {
   top: 562px;
   width: 46px;
   height: 50px;
-  background-image: url("imgs/cruche.png");
+  background-image: url("../imgs/cruche.png");
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -512,7 +549,7 @@ li {
   top: 591px;
   width: 68px;
   height: 89px;
-  background-image: url("imgs/dessin.png");
+  background-image: url("../imgs/dessin.png");
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -525,7 +562,7 @@ li {
   top: 538px;
   width: 89px;
   height: 146px;
-  background-image: url("imgs/statuette.png");
+  background-image: url("../imgs/statuette.png");
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -539,7 +576,7 @@ li {
     top: 315px;
     width: 26px;
     height: 28px;
-    background-image: url("imgs/cruche_med.png");
+    background-image: url("../imgs/cruche_med.png");
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -552,7 +589,7 @@ li {
     top: 330px;
     width: 38px;
     height: 50px;
-    background-image: url("imgs/dessin_med.gif");
+    background-image: url("../imgs/dessin_med.gif");
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -565,7 +602,7 @@ li {
     top: 300px;
     width: 50px;
     height: 82px;
-    background-image: url("imgs/statuette_med.gif");
+    background-image: url("../imgs/statuette_med.gif");
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -580,7 +617,7 @@ li {
     top: 225px;
     width: 18px;
     height: 20px;
-    background-image: url("imgs/cruche_sm.png");
+    background-image: url("../imgs/cruche_sm.png");
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -593,7 +630,7 @@ li {
     top: 220px;
     width: 27px;
     height: 35px;
-    background-image: url("imgs/dessin_sm.gif");
+    background-image: url("../imgs/dessin_sm.gif");
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -606,7 +643,7 @@ li {
     top: 210px;
     width: 35px;
     height: 57px;
-    background-image: url("imgs/statuette_sm.gif");
+    background-image: url("../imgs/statuette_sm.gif");
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -688,27 +725,27 @@ li {
   margin: 0.4rem auto;
   width: 890px;
   height: 580px;
-  background: url("imgs/eden.jpg") no-repeat center;
+  background: url("../imgs/eden.jpg") no-repeat center;
 }
 @media (max-width: 1150px) {
   .game__clic {
     width: 600px;
     height: 391px;
-    background: url("imgs/eden_med.jpg") no-repeat center;
+    background: url("../imgs/eden_med.jpg") no-repeat center;
   }
 }
 @media (max-width: 790px) {
   .game__clic {
     width: 400px;
     height: 261px;
-    background: url("imgs/eden_sm.jpg") no-repeat center;
+    background: url("../imgs/eden_sm.jpg") no-repeat center;
   }
 }
 @media (max-width: 550px) {
   .game__clic {
     width: 350px;
     height: 479px;
-    background: url("imgs/eden_tiny.jpg") no-repeat center;
+    background: url("../imgs/eden_tiny.jpg") no-repeat center;
   }
 }
 .game__zone--cc {
@@ -769,4 +806,4 @@ li {
   bottom: 120px;
 }
 
-/*# sourceMappingURL=minigames_style.css.map */
+/*# sourceMappingURL=style.css.map */

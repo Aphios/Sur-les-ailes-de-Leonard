@@ -5,4 +5,4 @@ let cachecache = new CacheCacheManager(50000, eden, 300, 100, leonard);
 
 let startDelay = setTimeout(function () {
     cachecache.launch();
-}, 5000);
+}, 3000);
