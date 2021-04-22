@@ -1,7 +1,7 @@
 #Ignore info and test files
 docs/fiche_projet.txt
-imgs/compositions/*
-imgs/transparents/*
+public/imgs/compositions/*
+public/imgs/transparents/*
 moodboard/*
 node_modules/*
 package-lock.json
@@ -9,3 +9,4 @@ package.json
 _previous/*
 _discarded/*
 _tmp/*
+sass_compile_cmd.txt

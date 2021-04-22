@@ -52,7 +52,7 @@ class GameManager {
      */
     sendPoints(pts, add) {
         let request = new XMLHttpRequest();
-        request.open("POST", "https://sur-les-ailes-de-leonard.fr/php_components/ajax_pts.php");
+        request.open("POST", "https://sur-les-ailes-de-leonard.fr/php/ajax_pts.php");
         request.setRequestHeader("X-Requested-With", "xmlhttprequest");
         request.addEventListener("load", function () {
             console.log(request.responseText);

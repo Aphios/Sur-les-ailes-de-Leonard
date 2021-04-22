@@ -1,6 +1,6 @@
 <?php
-	require_once 'php_components/utils.php';
-	require_once 'php_components/DBManager.php';
+	require_once 'php/utils.php';
+	require_once '../db/DBManager.php';
 ?>
 <html lang="fr">
   <head>
@@ -43,6 +43,7 @@
 					$personneId = $db->getDB()->lastInsertId();
 					$db->addMsg($msg, $personneId);
 					echo "<p>Merci $prenom, nous avons bien reçu ton message !</p>";
+					mail('contact@sur-les-ailes-de-leonard.fr', 'Mail automatique Nouveau Contact', 'Un nouveau contenu a été enregistré dans la base de données.', 'Content-Type: text/html; charset=UTF-8');
 				}else{
 					echo "<p>Oups, les éléments que tu as envoyés ne sont apparemment pas corrects...</p>";
 					echo "<p><a href='contact.php'>Essaye à nouveau en cliquant ici !</a></p>";

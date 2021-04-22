@@ -1,6 +1,6 @@
 <?php
-	require_once 'php_components/utils.php';
-	require_once 'php_components/DBManager.php';
+	require_once 'php/utils.php';
+	require_once '../db/DBManager.php';
   session_start();
   if(!isset($_SESSION["points"])){
     $_SESSION["points"] = 0;

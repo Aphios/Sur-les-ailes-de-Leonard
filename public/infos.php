@@ -47,7 +47,7 @@
                     </ul>
                     <h3>Mentions légales</h3>
                     <p>Ce site est édité par Sophie Blanchard.</p>
-                    <p>Hébergement : Nom, dénomination ou raison sociale et adresse et numéro de téléphone de l'hébergeur</p>
+                    <p>Hébergement : PulseHeberg - 55 avenue des Champs Pierreux - 92012 Nanterre Cedex - Téléphone : +33 (0)1 79 73 62 22 - Email : contact@pulseheberg.com</p>
                     <h4>Mentions relatives à l'utilisation des cookies</h4>
                     <p>Ce site ne fait aucune utilisation de cookies.</p>
                     <h4>Mentions relatives à l'utilisation de données personnelles</h4>

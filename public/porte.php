@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'php_components/Article.php';
+require 'php/Article.php';
 if(!isset($_SESSION["points"])){
   $_SESSION["points"] = 0;           
 }
