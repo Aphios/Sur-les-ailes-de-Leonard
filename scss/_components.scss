@@ -78,8 +78,12 @@
         }
     }
     &__time{
-        color: $neutral-light;
-        background-color: $col-secondary;
+        background-color: rgba(255, 255, 255, 0);
+        padding-top: 0.5em;
+        >.time__icon{
+            width: 30px;
+            height: 30px;
+        }
     }
 }
 
@@ -147,4 +151,9 @@
     @media(max-width: 500px){
         left: 20%;
     }
+}
+
+.balancing{
+    transform-origin: center;
+    animation: balance 10s linear infinite;
 }

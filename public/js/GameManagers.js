@@ -12,6 +12,9 @@ class GameManager {
         this.winMsg.innerText = "Bravo !";
         this.lostMsg.innerText = "Perdu !";
         this.restartBtn = document.getElementById("restart");
+        if(document.getElementById("time-btn")){
+            this.timeBtn = document.getElementById("time-btn");
+        }
     }
 
     /**
@@ -22,6 +25,9 @@ class GameManager {
             window.location = location.href;
         });
         this.progressbar.style.transform = "scaleX(1)";
+        if(this.timeBtn){
+            this.timeBtn.classList.add("balancing");
+        }
         this.timeOut = setTimeout( () => { 
             this.endGame(false); 
         }, this.duration);
@@ -42,6 +48,9 @@ class GameManager {
         // Stop timer and reset progressbar
         clearTimeout(this.timeOut);
         this.progressbar.style.display = "none";
+        if(this.timeBtn){
+            this.timeBtn.classList.remove("balancing");
+        }
     }
 
     /**

@@ -92,6 +92,8 @@ $cache_tiny: (top: 422px, left: 306px, width: 11px, height: 12px);
     background: url($img) no-repeat center;
 }
 
+// Animations
+
 @keyframes spin {
     0%{
         transform: rotate(0deg);
@@ -101,3 +103,20 @@ $cache_tiny: (top: 422px, left: 306px, width: 11px, height: 12px);
     }
 }
 
+@keyframes balance {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% { 
+        transform: rotate(25deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-25deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }    
+}

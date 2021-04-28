@@ -7,6 +7,23 @@
     transform: rotate(360deg);
   }
 }
+@keyframes balance {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(25deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-25deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 html {
   box-sizing: border-box;
   font-size: 18px;
@@ -407,8 +424,12 @@ li {
   margin: 5px auto;
 }
 .btn__time {
-  color: #ffffff;
-  background-color: #ac004a;
+  background-color: rgba(255, 255, 255, 0);
+  padding-top: 0.5em;
+}
+.btn__time > .time__icon {
+  width: 30px;
+  height: 30px;
 }
 
 .popup-msg {
@@ -487,6 +508,11 @@ li {
   .loader__icon {
     left: 20%;
   }
+}
+
+.balancing {
+  transform-origin: center;
+  animation: balance 10s linear infinite;
 }
 
 .game__dnd {
