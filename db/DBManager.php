@@ -2,8 +2,8 @@
 
 class DBManager{
     const DSN = 'mysql:host=localhost;dbname=ailes_leonard';
-    const USER = '****';
-    const PASS = '****';
+    const USER = 'ailesadmin';
+    const PASS = '8765Dhg%;
     private $_db;
     private $_options = [
         PDO::MYSQL_ATTR_INIT_COMMAND => 'SET Names utf8', // Ensure utf8 encoding
